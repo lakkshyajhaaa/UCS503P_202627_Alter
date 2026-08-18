@@ -66,6 +66,50 @@ document.addEventListener("DOMContentLoaded", () => {
       let progress = -containerTop / scrollDistance;
       progress = Math.max(0, Math.min(1, progress));
 
+      // Handle Hero Sequence
+      if (container.classList.contains('hero-container')) {
+        const stages = container.querySelectorAll('.h-stage');
+        const numStages = stages.length;
+        
+        stages.forEach((stage, index) => {
+          const start = index * (1 / numStages);
+          const end = (index + 1) * (1 / numStages);
+          
+          let opacity = 0;
+          let scale = 1.05;
+
+          if (progress >= start && progress <= end) {
+            const localProgress = (progress - start) / (end - start);
+            
+            // First stage visible immediately
+            if (index === 0 && localProgress < 0.25) {
+                opacity = 1;
+                scale = 1;
+            } else if (localProgress < 0.25) {
+                opacity = localProgress / 0.25;
+                scale = 1.05 - (0.05 * opacity);
+            } else if (localProgress >= 0.25 && localProgress <= 0.75) {
+                opacity = 1;
+                scale = 1;
+            } else {
+                opacity = 1 - ((localProgress - 0.75) / 0.25);
+                scale = 1 - (0.05 * (1 - opacity));
+            }
+            
+            if (index === numStages - 1 && progress > end - 0.05) {
+              opacity = 1;
+              scale = 1;
+            }
+          }
+          
+          stage.style.opacity = opacity;
+          stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+          
+          // Disable pointer events for hidden stages to prevent unclickable buttons
+          stage.style.pointerEvents = opacity > 0.5 ? 'auto' : 'none';
+        });
+      }
+
       // Handle Timeline Sequence
       if (container.classList.contains('timeline-container')) {
         const stages = container.querySelectorAll('.t-stage');
