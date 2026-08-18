@@ -3,19 +3,20 @@ import sys
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'code', 'landing'))
 
-MARKETING_HEADER = """
+def get_marketing_header(prefix):
+    return f"""
   <header class="header">
-    <a href="/" class="logo">
-      <img src="/assets/logo.webp" alt="Alter" width="52" height="52">
+    <a href="{prefix}index.html" class="logo">
+      <img src="{prefix}assets/logo.webp" alt="Alter" width="52" height="52">
     </a>
     <nav class="nav-pill desktop-nav">
-      <a href="/">Home</a>
-      <a href="/how-it-works/">How It Works</a>
-      <a href="/features/memory/">Features</a>
-      <a href="/methodology/architecture/">Methodology</a>
+      <a href="{prefix}index.html">Home</a>
+      <a href="{prefix}how-it-works/index.html">How It Works</a>
+      <a href="{prefix}features/memory/index.html">Features</a>
+      <a href="{prefix}methodology/architecture/index.html">Methodology</a>
     </nav>
     <div class="header-actions desktop-nav">
-      <a href="/onboarding/" class="sign-in cta-small">Build Your Twin</a>
+      <a href="{prefix}onboarding/index.html" class="sign-in cta-small">Build Your Twin</a>
     </div>
     <button class="burger mobile-only" aria-label="Toggle menu" aria-expanded="false">
       <span class="bar"></span>
@@ -25,7 +26,8 @@ MARKETING_HEADER = """
   </header>
 """
 
-FOOTER = """
+def get_footer(prefix):
+    return f"""
   <footer class="footer" style="margin-top:auto;">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -34,15 +36,15 @@ FOOTER = """
       </div>
       <div class="footer-links">
         <div class="f-col">
-          <a href="/methodology/architecture/">Methodology</a>
-          <a href="/features/memory/">Features</a>
+          <a href="{prefix}methodology/architecture/index.html">Methodology</a>
+          <a href="{prefix}features/memory/index.html">Features</a>
         </div>
         <div class="f-col">
-          <a href="/research/research-overview/">Research</a>
-          <a href="/documentation/">Documentation</a>
+          <a href="{prefix}research/research-overview/index.html">Research</a>
+          <a href="{prefix}documentation/index.html">Documentation</a>
         </div>
         <div class="f-col">
-          <a href="/privacy/">Privacy & Trust</a>
+          <a href="{prefix}privacy/index.html">Privacy & Trust</a>
           <a href="https://github.com/lakkshyajhaaa/UCS503P_202627_Alter">GitHub</a>
         </div>
       </div>
@@ -50,54 +52,56 @@ FOOTER = """
   </footer>
 """
 
-MOBILE_MENU = """
+def get_mobile_menu(prefix):
+    return f"""
   <div class="mobile-overlay hidden"></div>
   <div class="mobile-sheet hidden">
     <nav class="mobile-nav">
-      <a href="/">Home</a>
-      <a href="/how-it-works/">How It Works</a>
-      <a href="/features/memory/">Features</a>
-      <a href="/methodology/architecture/">Methodology</a>
+      <a href="{prefix}index.html">Home</a>
+      <a href="{prefix}how-it-works/index.html">How It Works</a>
+      <a href="{prefix}features/memory/index.html">Features</a>
+      <a href="{prefix}methodology/architecture/index.html">Methodology</a>
       <div class="mobile-divider"></div>
-      <a href="/onboarding/" class="sign-in-mobile">Build Your Twin</a>
+      <a href="{prefix}onboarding/index.html" class="sign-in-mobile">Build Your Twin</a>
     </nav>
   </div>
 """
 
-SIDEBAR = """
+def get_sidebar(prefix):
+    return f"""
   <aside class="sidebar">
     <div class="sidebar-logo">ALTER APP</div>
     <nav class="sidebar-nav">
       <div class="sidebar-nav-group">
         <div class="sidebar-nav-title">Engine</div>
-        <a href="/app/overview/" class="sidebar-link">Overview</a>
-        <a href="/app/decisions/simulate-decision/" class="sidebar-link">Simulate Decision</a>
-        <a href="/app/ask-twin/" class="sidebar-link">Ask Alter</a>
+        <a href="{prefix}app/overview/index.html" class="sidebar-link">Overview</a>
+        <a href="{prefix}app/decisions/simulate-decision/index.html" class="sidebar-link">Simulate Decision</a>
+        <a href="{prefix}app/ask-twin/index.html" class="sidebar-link">Ask Alter</a>
       </div>
       <div class="sidebar-nav-group">
         <div class="sidebar-nav-title">Memory</div>
-        <a href="/app/memory/semantic/" class="sidebar-link">Semantic</a>
-        <a href="/app/memory/episodic/" class="sidebar-link">Episodic</a>
-        <a href="/app/memory/behavioral/" class="sidebar-link">Behavioral</a>
+        <a href="{prefix}app/memory/semantic/index.html" class="sidebar-link">Semantic</a>
+        <a href="{prefix}app/memory/episodic/index.html" class="sidebar-link">Episodic</a>
+        <a href="{prefix}app/memory/behavioral/index.html" class="sidebar-link">Behavioral</a>
       </div>
       <div class="sidebar-nav-group">
         <div class="sidebar-nav-title">System</div>
-        <a href="/app/settings/profile/" class="sidebar-link">Settings</a>
-        <a href="/" class="sidebar-link">Back to Site</a>
+        <a href="{prefix}app/settings/profile/index.html" class="sidebar-link">Settings</a>
+        <a href="{prefix}index.html" class="sidebar-link">Back to Site</a>
       </div>
     </nav>
   </aside>
 """
 
 def generate_marketing_html(title, path_depth):
-    prefix = "../" * path_depth
+    prefix = "../" * path_depth if path_depth > 0 else "./"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} — Alter</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="{prefix}styles.css">
 </head>
 <body>
   <!-- Cinematic Background -->
@@ -109,28 +113,28 @@ def generate_marketing_html(title, path_depth):
   </div>
 
   <div class="page" style="min-height:100vh;">
-{MARKETING_HEADER}
+{get_marketing_header(prefix)}
     <div class="content-section" style="margin-top: 15vh; flex: 1;">
       <h1 class="section-title">{title}</h1>
       <p class="section-body">This page is under construction.</p>
     </div>
-{FOOTER}
+{get_footer(prefix)}
   </div>
-{MOBILE_MENU}
-  <script src="/main.js"></script>
+{get_mobile_menu(prefix)}
+  <script src="{prefix}main.js"></script>
 </body>
 </html>
 """
 
 def generate_app_html(title, path_depth):
-    prefix = "../" * path_depth
+    prefix = "../" * path_depth if path_depth > 0 else "./"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} — Alter App</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="{prefix}styles.css">
 </head>
 <body>
   <!-- Cinematic Background -->
@@ -142,7 +146,7 @@ def generate_app_html(title, path_depth):
   </div>
 
   <div class="app-layout">
-{SIDEBAR}
+{get_sidebar(prefix)}
     <main class="app-content">
       <h1 class="app-page-title">{title}</h1>
       <p class="app-page-sub">Internal application routing.</p>
@@ -158,7 +162,9 @@ def generate_app_html(title, path_depth):
 
 def main():
     skip_files = ['index.html', 'main.js', 'styles.css']
-    skip_dirs = ['assets', 'fonts', 'auth/sign-in', 'methodology/architecture']
+    # Removing 'auth/sign-in' and 'methodology/architecture' from skip list because we manually edited them and their absolute paths are broken too, except wait: if I overwrite them, I lose the mock auth logic and the architecture page content!
+    # Instead, I will skip them and fix them manually.
+    skip_dirs = ['assets', 'fonts', 'auth/sign-in', 'methodology/architecture', 'app/overview', 'app/decisions/simulate-decision', 'app/memory/semantic']
     
     for root, dirs, files in os.walk(BASE_DIR):
         for f in files:
@@ -168,7 +174,6 @@ def main():
             filepath = os.path.join(root, f)
             rel_path = os.path.relpath(filepath, BASE_DIR).replace('\\', '/')
             
-            # Skip the main files and the ones we already specifically coded
             if rel_path in skip_files:
                 continue
             
@@ -181,11 +186,8 @@ def main():
             if should_skip:
                 continue
             
-            # Calculate path depth
             dir_path = os.path.dirname(rel_path)
             path_depth = len(dir_path.split('/')) if dir_path else 0
-            
-            # Generate title from the folder name
             folder_name = os.path.basename(dir_path).replace('-', ' ').title()
             
             if rel_path.startswith('app/') or rel_path.startswith('onboarding/'):
