@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Intelligence Designed To Evolve</title>
+  <title>AI Twin — An AI that learns you.</title>
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://db.onlinewebfonts.com/c/8cb707a9b8a73f8a7403336b861c3074?family=BubbledotICG-FinePos" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,10 +22,9 @@
     </video>
   </div>
 
-  <!-- Main Composition -->
   <div class="page">
     
-    <!-- 1) Header -->
+    <!-- Header -->
     <header class="header">
       <a href="/" class="logo">
         <img src="assets/logo.webp" alt="" width="52" height="52">
@@ -34,14 +32,17 @@
 
       <!-- Desktop Nav -->
       <nav class="nav-pill desktop-nav">
-        <a href="#" class="active">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Methodology</a>
-        <a href="#">Contact</a>
+        <a href="/" class="active">Home</a>
+        <a href="/how-it-works/">How It Works</a>
+        <a href="/features/memory/">Features</a>
+        <a href="/methodology/architecture/">Methodology</a>
       </nav>
 
-      <!-- Desktop Sign In -->
-      <a href="#" class="sign-in desktop-sign-in">Sign in</a>
+      <!-- Desktop Right Actions -->
+      <div class="header-actions desktop-nav">
+        <a href="/auth/sign-in/" class="sign-in-text">Sign in</a>
+        <a href="/onboarding/" class="sign-in cta-small">Build Your Twin</a>
+      </div>
 
       <!-- Mobile Burger -->
       <button class="burger mobile-only" aria-label="Toggle menu" aria-expanded="false">
@@ -51,52 +52,305 @@
       </button>
     </header>
 
-    <!-- 2) Hero -->
-    <main class="hero">
-      <div class="trust-row anim" style="--d: 0.05s;">
-        <div class="avatars">
-          <div class="avatar-ring a1"><div class="inner"><i class="fa-brands fa-microsoft"></i></div></div>
-          <div class="avatar-ring a2"><div class="inner"><i class="fa-brands fa-amazon"></i></div></div>
-          <div class="avatar-ring a3"><div class="inner"><i class="fa-brands fa-google"></i></div></div>
-        </div>
-        <div class="trust-pill">
-          Learning from 10,000+ Decisions
-        </div>
-      </div>
+    <!-- HERO SECTION -->
+    <section class="hero scroll-section visible">
+      <div class="eyebrow anim" style="--d: 0.05s;">YOUR DIGITAL TWIN</div>
 
       <h1 class="headline anim">
-        <span style="--d: 0.12s;">Intelligence</span><br>
-        <span style="--d: 0.3s;">Designed To Evolve</span>
+        <span style="--d: 0.12s;">An AI that</span><br>
+        <span style="--d: 0.3s;">learns you.</span>
       </h1>
 
       <p class="subhead anim" style="--d: 0.28s;">
-        A personal digital replica that learns how you think, remembers what happened, and adapts to help you achieve your goals.
+        A personal digital replica that remembers what happened, understands how you behave, predicts what you might do, and adapts around the life you want to build.
       </p>
 
-      <a href="#" class="cta anim" style="--d: 0.4s;">Get Started</a>
-    </main>
+      <div class="hero-actions anim" style="--d: 0.4s;">
+        <a href="/onboarding/" class="cta">Build Your Twin</a>
+        <a href="/methodology/architecture/" class="cta-secondary">Explore the Method</a>
+      </div>
+      
+      <div class="hero-support anim" style="--d: 0.45s;">
+        Remember. Understand. Predict. Adapt.
+      </div>
+    </section>
 
-    <!-- 3) Stats Footer -->
-    <footer class="stats">
-      <div class="stat-item anim" style="--d: 0.5s;">
-        <div class="stat-icon">&lt;</div>
-        <div class="stat-value" data-target="150" data-suffix="ms" data-decimals="0">0ms</div>
-        <div class="stat-label">Memory Retrieval</div>
+    <!-- HERO METRICS AREA (Pillars) -->
+    <section class="stats pillars scroll-section">
+      <div class="stat-item anim" style="--d: 0.1s;">
+        <div class="stat-value">MEMORY</div>
+        <div class="stat-label">What happened</div>
       </div>
-      <div class="stat-item anim" style="--d: 0.58s;">
-        <div class="stat-icon">%</div>
-        <div class="stat-value" data-target="95.00" data-suffix="%" data-decimals="2">0.00%</div>
-        <div class="stat-label">Prediction Accuracy</div>
+      <div class="stat-item anim" style="--d: 0.15s;">
+        <div class="stat-value">PREFERENCES</div>
+        <div class="stat-label">What you like</div>
       </div>
-      <div class="stat-item anim" style="--d: 0.66s;">
-        <div class="stat-icon">*</div>
-        <div class="stat-value" data-target="24" data-suffix="/7" data-decimals="0">0/7</div>
-        <div class="stat-label">Adaptive Learning</div>
+      <div class="stat-item anim" style="--d: 0.2s;">
+        <div class="stat-value">BEHAVIOR</div>
+        <div class="stat-label">How you act</div>
       </div>
-      <div class="stat-item anim" style="--d: 0.74s;">
-        <div class="stat-icon">#</div>
-        <div class="stat-value" data-target="10" data-suffix="K+" data-decimals="0">0K+</div>
-        <div class="stat-label">Decisions Modeled</div>
+      <div class="stat-item anim" style="--d: 0.25s;">
+        <div class="stat-value">ADAPTATION</div>
+        <div class="stat-label">What could work better</div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE TWIN LEARNS OVER TIME -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">The more it knows you, the more it becomes you.</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        AI Twin doesn't start with a complete understanding of you. It builds one.<br>
+        Every memory, decision, preference, habit, and outcome becomes another piece of your digital identity.
+      </p>
+
+      <div class="timeline-container anim" style="--d: 0.2s;">
+        <div class="timeline-step">
+          <div class="node"></div>
+          <div class="step-meta">DAY 01</div>
+          <div class="step-desc">"I know very little."</div>
+        </div>
+        <div class="timeline-step">
+          <div class="node"></div>
+          <div class="step-meta">WEEK 02</div>
+          <div class="step-desc">"I understand your patterns."</div>
+        </div>
+        <div class="timeline-step">
+          <div class="node"></div>
+          <div class="step-meta">MONTH 03</div>
+          <div class="step-desc">"I know what tends to work for you."</div>
+        </div>
+        <div class="timeline-step final-step">
+          <div class="node pulse"></div>
+          <div class="step-meta">YOUR TWIN</div>
+          <div class="step-desc">"I can anticipate what you need."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: WHAT THE TWIN LEARNS -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">A model of you, not just your data.</h2>
+      
+      <div class="cards-grid anim" style="--d: 0.2s;">
+        <div class="card">
+          <div class="card-eyebrow">MEMORY</div>
+          <div class="card-title">What happened</div>
+          <div class="card-desc">Experiences, projects, conversations, decisions, and important moments.</div>
+        </div>
+        <div class="card">
+          <div class="card-eyebrow">PREFERENCES</div>
+          <div class="card-title">What you like</div>
+          <div class="card-desc">Interests, priorities, choices, and things you consistently gravitate toward.</div>
+        </div>
+        <div class="card">
+          <div class="card-eyebrow">BEHAVIOR</div>
+          <div class="card-title">How you act</div>
+          <div class="card-desc">Habits, routines, productive periods, distractions, and recurring patterns.</div>
+        </div>
+        <div class="card">
+          <div class="card-eyebrow">GOALS</div>
+          <div class="card-title">Where you're going</div>
+          <div class="card-desc">What you're trying to accomplish and what matters to you.</div>
+        </div>
+      </div>
+      
+      <div class="convergence anim" style="--d: 0.3s;">
+        <div class="convergence-arrows">↓</div>
+        <div class="convergence-target">YOUR TWIN</div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DECISION SIMULATION -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">What would you do?</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        Ask your Twin a question. See what it thinks you would choose.
+      </p>
+
+      <div class="interactive-panel anim" style="--d: 0.2s;">
+        <div class="panel-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="panel-title">Decision Engine</span>
+        </div>
+        <div class="panel-body">
+          <div class="query">
+            <div class="query-label">What would I probably do?</div>
+            <div class="query-text">"I have two free hours tonight. Would I work on my project or meet my friends?"</div>
+          </div>
+          <button id="simulate-btn" class="cta-small simulate-btn">Simulate</button>
+          
+          <div id="simulation-result" class="result-container hidden">
+            <div class="result-label">YOUR TWIN PREDICTS</div>
+            <div class="result-choice">Work on the project</div>
+            <div class="result-confidence">74% confidence</div>
+            
+            <div class="result-factors">
+              <div class="factor-title">Relevant factors:</div>
+              <ul>
+                <li>Similar decisions in the past</li>
+                <li>Current project deadline</li>
+                <li>Your stated priorities</li>
+                <li>Previous behavior in similar situations</li>
+              </ul>
+            </div>
+            <div class="result-disclaimer">Prediction, not recommendation.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: ADAPTIVE GOAL OPTIMIZATION -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">It doesn't fit you into a schedule.<br><span class="highlight">It builds the schedule around you.</span></h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        Your Twin learns when you focus, when you procrastinate, what interrupts you, and what makes you follow through — then uses those patterns to optimize your routine.
+      </p>
+
+      <div class="personas anim" style="--d: 0.2s;">
+        <div class="persona"><span>STUDENT</span>Exam preparation</div>
+        <div class="persona"><span>ATHLETE</span>Training consistency</div>
+        <div class="persona"><span>CREATOR</span>Creative workflow</div>
+        <div class="persona"><span>PROFESSIONAL</span>Deep work</div>
+        <div class="persona"><span>ENTREPRENEUR</span>Building a company</div>
+      </div>
+
+      <div class="scenario-panel anim" style="--d: 0.25s;">
+        <div class="scenario-context">A student needs to prepare for an important examination.</div>
+        <div class="scenario-discoveries">
+          <div><i class="fa-solid fa-arrow-right"></i> High concentration → <span>Morning</span></div>
+          <div><i class="fa-solid fa-arrow-right"></i> Low productivity → <span>Late evening</span></div>
+          <div><i class="fa-solid fa-arrow-right"></i> Exercise → <span>Usually 6 PM</span></div>
+          <div><i class="fa-solid fa-arrow-right"></i> Messages → <span>Frequently arrive around 10:30 PM</span></div>
+          <div><i class="fa-solid fa-arrow-right"></i> Task adherence → <span>Low immediately after classes</span></div>
+        </div>
+        <div class="scenario-flow">
+          Goal <i class="fa-solid fa-chevron-right"></i> Behavior <i class="fa-solid fa-chevron-right"></i> Constraints <i class="fa-solid fa-chevron-right"></i> Optimization <i class="fa-solid fa-chevron-right"></i> Outcome
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: LEARNING LOOP -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">It learns from what actually happens.</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        A recommendation isn't successful because it sounds good.<br>It's successful when it works for you.<br><br>
+        AI Twin observes the outcome of its suggestions and updates its understanding accordingly.
+      </p>
+
+      <div class="loop-diagram anim" style="--d: 0.2s;">
+        <div class="loop-node">PLAN</div>
+        <div class="loop-arrow">↓</div>
+        <div class="loop-node">ACT</div>
+        <div class="loop-arrow">↓</div>
+        <div class="loop-node">OBSERVE</div>
+        <div class="loop-arrow">↓</div>
+        <div class="loop-node">LEARN</div>
+        <div class="loop-arrow">↓</div>
+        <div class="loop-node">ADAPT</div>
+        <div class="loop-arrow">↓</div>
+        <div class="loop-node">PLAN AGAIN</div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: MEMORY -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">Nothing important gets lost in the noise.</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        Your Twin turns scattered information into a structured, searchable memory of your life.
+      </p>
+
+      <div class="memory-layers anim" style="--d: 0.2s;">
+        <div class="memory-layer semantic">
+          <div class="layer-title">SEMANTIC</div>
+          <div class="layer-quote">"I know you prefer..."</div>
+        </div>
+        <div class="memory-layer episodic">
+          <div class="layer-title">EPISODIC</div>
+          <div class="layer-quote">"You did this..."</div>
+        </div>
+        <div class="memory-layer behavioral">
+          <div class="layer-title">BEHAVIORAL</div>
+          <div class="layer-quote">"You tend to..."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: TRUST & TRANSPARENCY -->
+    <section class="content-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">You should know why your Twin thinks something about you.</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        AI Twin separates what it knows from what it infers and what it predicts.
+      </p>
+
+      <div class="transparency-levels anim" style="--d: 0.2s;">
+        <div class="t-level">
+          <div class="t-label">KNOWN</div>
+          <div class="t-desc">"You usually exercise at 6 PM."</div>
+        </div>
+        <div class="t-level">
+          <div class="t-label">INFERRED</div>
+          <div class="t-desc">"You appear to prefer exercising in the evening."</div>
+        </div>
+        <div class="t-level">
+          <div class="t-label">PREDICTED</div>
+          <div class="t-desc">"You are likely to exercise at 6 PM today."</div>
+        </div>
+      </div>
+      <p class="section-body meta anim" style="--d: 0.25s;">
+        Every memory can be reviewed, corrected, or removed.
+      </p>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="content-section cta-section scroll-section">
+      <h2 class="section-title anim" style="--d: 0.1s;">Meet the version of you that never forgets.</h2>
+      <p class="section-body anim" style="--d: 0.15s;">
+        Give it your memories. Show it your patterns. Tell it where you're going.
+      </p>
+      <div class="hero-actions anim" style="--d: 0.2s;">
+        <a href="/onboarding/" class="cta">Build Your Twin</a>
+        <a href="/how-it-works/" class="cta-secondary">Explore How It Works</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer scroll-section">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="f-logo">AI TWIN</div>
+          <div class="f-tag">A digital replica that learns you.</div>
+          <div class="f-copy">&copy; 2026 AI Twin</div>
+        </div>
+        <div class="footer-links">
+          <div class="f-col">
+            <div class="f-col-title">Product</div>
+            <a href="/features/memory/">Features</a>
+            <a href="/app/memory/all-memories/">Memory</a>
+            <a href="/app/decisions/simulate-decision/">Decision Simulation</a>
+            <a href="/app/goals/active-goals/">Adaptive Goals</a>
+            <a href="/methodology/architecture/">Methodology</a>
+          </div>
+          <div class="f-col">
+            <div class="f-col-title">Explore</div>
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/research/research-overview/">Research</a>
+            <a href="/roadmap/">Roadmap</a>
+            <a href="/documentation/">Documentation</a>
+          </div>
+          <div class="f-col">
+            <div class="f-col-title">Trust</div>
+            <a href="/privacy/">Privacy</a>
+            <a href="/security/">Security</a>
+            <a href="/app/settings/data/">Data & Memory</a>
+            <a href="/responsible-ai/">Responsible AI</a>
+          </div>
+          <div class="f-col">
+            <div class="f-col-title">Project</div>
+            <a href="https://github.com/lakkshyajhaaa/UCS503P_202627_Alter">GitHub</a>
+            <a href="#">Team</a>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
       </div>
     </footer>
 
@@ -106,11 +360,13 @@
   <div class="mobile-overlay hidden"></div>
   <div class="mobile-sheet hidden">
     <nav class="mobile-nav">
-      <a href="#" class="active" style="--d: 0.1s;">Home</a>
-      <a href="#" style="--d: 0.15s;">Features</a>
-      <a href="#" style="--d: 0.2s;">Methodology</a>
-      <a href="#" style="--d: 0.25s;">Contact</a>
-      <a href="#" class="sign-in-mobile" style="--d: 0.3s;">Sign in</a>
+      <a href="/" class="active" style="--d: 0.1s;">Home</a>
+      <a href="/how-it-works/" style="--d: 0.15s;">How It Works</a>
+      <a href="/features/memory/" style="--d: 0.2s;">Features</a>
+      <a href="/methodology/architecture/" style="--d: 0.25s;">Methodology</a>
+      <div class="mobile-divider" style="--d: 0.28s;"></div>
+      <a href="/auth/sign-in/" class="sign-in-text-mobile" style="--d: 0.3s;">Sign in</a>
+      <a href="/onboarding/" class="sign-in-mobile" style="--d: 0.35s;">Build Your Twin</a>
     </nav>
   </div>
 

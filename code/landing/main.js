@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleMenu() {
     menuOpen = !menuOpen;
-    burger.setAttribute("aria-expanded", menuOpen);
+    if(burger) burger.setAttribute("aria-expanded", menuOpen);
     
     if (menuOpen) {
-      overlay.classList.remove("hidden");
-      sheet.classList.remove("hidden");
+      if(overlay) overlay.classList.remove("hidden");
+      if(sheet) sheet.classList.remove("hidden");
       document.body.classList.add("menu-open");
     } else {
-      overlay.classList.add("hidden");
-      sheet.classList.add("hidden");
+      if(overlay) overlay.classList.add("hidden");
+      if(sheet) sheet.classList.add("hidden");
       document.body.classList.remove("menu-open");
     }
   }
@@ -33,58 +33,66 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 720 && menuOpen) {
+    if (window.innerWidth > 900 && menuOpen) {
       toggleMenu();
     }
   });
 
-  // --- Stats Count-Up Logic ---
-  const statValues = document.querySelectorAll(".stat-value");
+  // --- Scroll Intersection Observer ---
+  const scrollSections = document.querySelectorAll(".scroll-section");
   
-  // easeOutCubic function
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-  const animateValue = (el, i) => {
-    const target = parseFloat(el.getAttribute("data-target"));
-    const suffix = el.getAttribute("data-suffix") || "";
-    const decimals = parseInt(el.getAttribute("data-decimals")) || 0;
-    const duration = 1500 + i * 80;
-    const delay = 480 + i * 90;
-    
-    let startTime = null;
-
-    // Set to 0 initially
-    el.textContent = `0${decimals > 0 ? '.' + '0'.repeat(decimals) : ''}${suffix}`;
-
-    setTimeout(() => {
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        const easeProgress = easeOutCubic(progress);
+  const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Find all .anim children within this section
+        const anims = entry.target.querySelectorAll('.anim');
+        anims.forEach(anim => {
+          anim.classList.add('visible');
+        });
         
-        const currentValue = easeProgress * target;
-        el.textContent = `${currentValue.toFixed(decimals)}${suffix}`;
+        // If the section itself is an anim (like hero), make it visible
+        if (entry.target.classList.contains('anim')) {
+          entry.target.classList.add('visible');
+        }
         
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = `${target.toFixed(decimals)}${suffix}`;
-        }
-      };
-      requestAnimationFrame(step);
-    }, delay);
-  };
+        // Stop observing once animated to prevent repeating
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  });
 
-  if (statValues.length > 0) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          statValues.forEach((el, i) => animateValue(el, i));
-          obs.disconnect(); // Only run once
-        }
-      });
-    }, { threshold: 0.25 });
-    
-    observer.observe(document.querySelector(".stats"));
+  scrollSections.forEach(section => {
+    sectionObserver.observe(section);
+  });
+  
+  // Make sure hero elements animate immediately if already in view
+  setTimeout(() => {
+    const heroAnims = document.querySelectorAll('.hero .anim');
+    heroAnims.forEach(a => a.classList.add('visible'));
+  }, 100);
+
+  // --- Decision Simulation Logic ---
+  const simulateBtn = document.getElementById("simulate-btn");
+  const simulationResult = document.getElementById("simulation-result");
+  
+  if (simulateBtn && simulationResult) {
+    simulateBtn.addEventListener("click", () => {
+      // Simple loading state
+      simulateBtn.textContent = "Simulating...";
+      simulateBtn.style.opacity = "0.7";
+      simulateBtn.disabled = true;
+      
+      setTimeout(() => {
+        simulateBtn.classList.add("hidden");
+        simulationResult.classList.remove("hidden");
+        
+        // Smooth scroll to the result if needed
+        simulationResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 1200); // 1.2s fake computation delay
+    });
   }
 });
