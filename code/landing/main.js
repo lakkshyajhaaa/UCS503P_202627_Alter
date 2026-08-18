@@ -28,52 +28,129 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", () => { if (menuOpen) toggleMenu(); });
   });
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && menuOpen) toggleMenu();
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 900 && menuOpen) {
-      toggleMenu();
-    }
-  });
-
-  // --- Scroll Intersection Observer ---
+  // --- Scroll Intersection Observer (Standard Anims) ---
   const scrollSections = document.querySelectorAll(".scroll-section");
-  
   const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Find all .anim children within this section
         const anims = entry.target.querySelectorAll('.anim');
-        anims.forEach(anim => {
-          anim.classList.add('visible');
-        });
-        
-        // If the section itself is an anim (like hero), make it visible
+        anims.forEach(anim => anim.classList.add('visible'));
         if (entry.target.classList.contains('anim')) {
           entry.target.classList.add('visible');
         }
-        
-        // Stop observing once animated to prevent repeating
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    root: null,
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  });
+  }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
-  scrollSections.forEach(section => {
-    sectionObserver.observe(section);
-  });
+  scrollSections.forEach(section => sectionObserver.observe(section));
   
-  // Make sure hero elements animate immediately if already in view
   setTimeout(() => {
     const heroAnims = document.querySelectorAll('.hero .anim');
     heroAnims.forEach(a => a.classList.add('visible'));
   }, 100);
+
+  // --- Sticky Scroll Animations (Cinematic Reveal) ---
+  const stickyContainers = document.querySelectorAll('.sticky-container');
+  
+  function handleScroll() {
+    stickyContainers.forEach(container => {
+      const rect = container.getBoundingClientRect();
+      const containerTop = rect.top;
+      const containerHeight = rect.height;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate progress between 0 and 1 while the container is scrolling past the window
+      // The sticky content sticks for (containerHeight - windowHeight) pixels
+      const scrollDistance = containerHeight - windowHeight;
+      let progress = -containerTop / scrollDistance;
+      progress = Math.max(0, Math.min(1, progress));
+
+      // Handle Timeline Sequence
+      if (container.classList.contains('timeline-container')) {
+        const stages = container.querySelectorAll('.t-stage');
+        const numStages = stages.length;
+        
+        stages.forEach((stage, index) => {
+          // Calculate when each stage should peak
+          const start = index * (1 / numStages);
+          const end = (index + 1) * (1 / numStages);
+          
+          let opacity = 0;
+          let yOffset = 20; // Starts slightly low
+
+          if (progress >= start && progress <= end) {
+            // Map the local progress (0 to 1 for this stage's chunk)
+            const localProgress = (progress - start) / (end - start);
+            
+            // Fade in (0 -> 0.3)
+            if (localProgress < 0.3) {
+              opacity = localProgress / 0.3;
+              yOffset = 20 * (1 - opacity);
+            } 
+            // Hold (0.3 -> 0.7)
+            else if (localProgress >= 0.3 && localProgress <= 0.7) {
+              opacity = 1;
+              yOffset = 0;
+            } 
+            // Fade out (0.7 -> 1.0)
+            else {
+              opacity = 1 - ((localProgress - 0.7) / 0.3);
+              yOffset = -20 * (1 - opacity);
+            }
+            
+            // Keep the final stage visible if we scroll past
+            if (index === numStages - 1 && progress > end - 0.05) {
+              opacity = 1;
+              yOffset = 0;
+            }
+          }
+          
+          stage.style.opacity = opacity;
+          stage.style.transform = `translate(-50%, calc(-50% + ${yOffset}px))`;
+        });
+      }
+      
+      // Handle Concepts Sequence
+      if (container.classList.contains('concepts-container')) {
+        const stages = container.querySelectorAll('.c-stage');
+        const numStages = stages.length;
+        
+        stages.forEach((stage, index) => {
+          const start = index * (1 / numStages);
+          const end = (index + 1) * (1 / numStages);
+          
+          let opacity = 0;
+          let yOffset = 20;
+
+          if (progress >= start && progress <= end) {
+            const localProgress = (progress - start) / (end - start);
+            if (localProgress < 0.25) {
+              opacity = localProgress / 0.25;
+              yOffset = 20 * (1 - opacity);
+            } else if (localProgress >= 0.25 && localProgress <= 0.75) {
+              opacity = 1;
+              yOffset = 0;
+            } else {
+              opacity = 1 - ((localProgress - 0.75) / 0.25);
+              yOffset = -20 * (1 - opacity);
+            }
+            
+            if (index === numStages - 1 && progress > end - 0.05) {
+              opacity = 1;
+              yOffset = 0;
+            }
+          }
+          
+          stage.style.opacity = opacity;
+          stage.style.transform = `translate(-50%, calc(-50% + ${yOffset}px))`;
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Initial trigger
 
   // --- Decision Simulation Logic ---
   const simulateBtn = document.getElementById("simulate-btn");
@@ -81,18 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
   
   if (simulateBtn && simulationResult) {
     simulateBtn.addEventListener("click", () => {
-      // Simple loading state
-      simulateBtn.textContent = "Simulating...";
+      simulateBtn.innerHTML = "SIMULATING... <span class='fa-solid fa-circle-notch fa-spin'></span>";
       simulateBtn.style.opacity = "0.7";
       simulateBtn.disabled = true;
       
       setTimeout(() => {
         simulateBtn.classList.add("hidden");
         simulationResult.classList.remove("hidden");
-        
-        // Smooth scroll to the result if needed
-        simulationResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 1200); // 1.2s fake computation delay
+      }, 1000);
     });
   }
 });

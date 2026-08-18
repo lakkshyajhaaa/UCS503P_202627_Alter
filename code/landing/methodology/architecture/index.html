@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture — AI Twin</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* Basic styles for the architecture page */
+    .arch-page { padding: 120px 24px; max-width: 800px; margin: 0 auto; color: #fff; }
+    .arch-title { font-size: 48px; margin-bottom: 24px; font-weight: 500; letter-spacing: -0.04em; }
+    .arch-section { margin-bottom: 80px; }
+    .arch-h2 { font-size: 24px; color: #fd86db; margin-bottom: 16px; font-weight: 400; }
+    p { color: #aaa; line-height: 1.6; margin-bottom: 24px; }
+    .diagram-box { border: 1px solid rgba(255,255,255,0.1); padding: 24px; border-radius: 8px; background: rgba(255,255,255,0.02); margin-bottom: 24px; }
+    .diagram-title { font-family: monospace; font-size: 12px; color: #888; margin-bottom: 16px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  
+  <!-- Reuse Header -->
+  <header class="header" style="position: absolute; top: 24px; left: 50%; transform: translateX(-50%);">
+    <nav class="nav-pill">
+      <a href="/">Home</a>
+      <a href="/methodology/architecture/" class="active">Methodology</a>
+    </nav>
+  </header>
+
+  <div class="arch-page">
+    <h1 class="arch-title">System Architecture</h1>
+    
+    <section class="arch-section">
+      <h2 class="arch-h2">The Learning Loop</h2>
+      <p>A recommendation isn't successful because it sounds good. It's successful when it works for you. AI Twin observes the outcome of its suggestions and updates its understanding accordingly.</p>
+      <div class="diagram-box">
+        <div class="diagram-title">System Flow</div>
+        <p>PLAN &rarr; ACT &rarr; OBSERVE &rarr; LEARN &rarr; ADAPT &rarr; PLAN AGAIN</p>
+      </div>
+    </section>
+
+    <section class="arch-section">
+      <h2 class="arch-h2">Memory Layers</h2>
+      <p>Your Twin turns scattered information into a structured, searchable memory of your life.</p>
+      <div class="diagram-box">
+        <div class="diagram-title">Semantic</div>
+        <p>"I know you prefer..."</p>
+      </div>
+      <div class="diagram-box">
+        <div class="diagram-title">Episodic</div>
+        <p>"You did this..."</p>
+      </div>
+      <div class="diagram-box">
+        <div class="diagram-title">Behavioral</div>
+        <p>"You tend to..."</p>
+      </div>
+    </section>
+
+    <section class="arch-section">
+      <h2 class="arch-h2">Trust & Transparency</h2>
+      <p>AI Twin separates what it knows from what it infers and what it predicts. Every memory can be reviewed, corrected, or removed.</p>
+      <div class="diagram-box">
+        <div class="diagram-title">KNOWN</div>
+        <p>"You usually exercise at 6 PM."</p>
+      </div>
+      <div class="diagram-box">
+        <div class="diagram-title">INFERRED</div>
+        <p>"You appear to prefer exercising in the evening."</p>
+      </div>
+      <div class="diagram-box">
+        <div class="diagram-title">PREDICTED</div>
+        <p>"You are likely to exercise at 6 PM today."</p>
+      </div>
+    </section>
+    
+  </div>
+</body>
+</html>
