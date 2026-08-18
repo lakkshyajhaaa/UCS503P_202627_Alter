@@ -212,4 +212,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     });
   }
+
+  // --- Auth Routing Logic ---
+  const buildBtns = document.querySelectorAll('a[href="/onboarding/"]');
+  buildBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      // Mock auth check: Check if user is logged in
+      const isSignedIn = localStorage.getItem('alter_signed_in') === 'true';
+      if (isSignedIn) {
+        window.location.href = '/onboarding/';
+      } else {
+        window.location.href = '/auth/sign-in/';
+      }
+    });
+  });
 });
