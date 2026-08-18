@@ -645,3 +645,171 @@ a { text-decoration: none; }
   padding: 32px;
   backdrop-filter: blur(10px);
 }
+
+/* APP UI COMPONENTS */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.app-card {
+  background: rgba(20, 20, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.app-card-title {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Forms & Inputs */
+.app-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px 20px;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-bottom: 16px;
+}
+.app-input:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+textarea.app-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.app-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.app-btn:hover {
+  opacity: 0.9;
+}
+.app-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.app-btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Data Tables */
+.data-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.data-table th {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.data-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+.data-table tr:hover td {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-known {
+  background: rgba(134, 253, 178, 0.1);
+  color: #86fdb2;
+  border: 1px solid rgba(134, 253, 178, 0.2);
+}
+.badge-inferred {
+  background: rgba(253, 134, 219, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(253, 134, 219, 0.2);
+}
+
+/* Lists */
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+.feed-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.feed-icon {
+  color: var(--accent);
+  font-size: 14px;
+  margin-top: 2px;
+}
+.feed-content p {
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #fff;
+}
+.feed-meta {
+  font-size: 12px;
+  color: var(--muted);
+}

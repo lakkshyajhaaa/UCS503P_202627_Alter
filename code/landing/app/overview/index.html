@@ -42,10 +42,79 @@
 
     <main class="app-content">
       <h1 class="app-page-title">Overview</h1>
-      <p class="app-page-sub">Internal application routing.</p>
+      <p class="app-page-sub">Your digital twin's current state and recent activity.</p>
       
-      <div class="app-panel">
-        <p style="color:#aaa;">Content for Overview will be rendered here.</p>
+      <div class="app-grid">
+        <div class="app-card">
+          <div class="app-card-title">Total Memories</div>
+          <div class="metric-value">14,208</div>
+          <div class="metric-label">+124 this week</div>
+        </div>
+        <div class="app-card">
+          <div class="app-card-title">Prediction Accuracy</div>
+          <div class="metric-value">84.2%</div>
+          <div class="metric-label">Based on 152 simulated decisions</div>
+        </div>
+        <div class="app-card">
+          <div class="app-card-title">Active Goals</div>
+          <div class="metric-value">3</div>
+          <div class="metric-label">Focus, Fitness, Deep Work</div>
+        </div>
+      </div>
+
+      <div class="app-panel" style="margin-bottom: 32px;">
+        <div class="app-card-title">Simulate Scenario</div>
+        <input type="text" class="app-input" placeholder="e.g. Should I accept the dinner invitation for Thursday night?">
+        <button class="app-btn" onclick="window.location.href='/app/decisions/simulate-decision/'">Ask Alter</button>
+      </div>
+
+      <div class="app-grid">
+        <div class="app-panel">
+          <div class="app-card-title">Recent Ingestions</div>
+          <div class="feed-list">
+            <div class="feed-item">
+              <div class="feed-icon"><i class="fa-solid fa-brain"></i></div>
+              <div class="feed-content">
+                <p>Identified preference: Prefers morning workouts over evening workouts.</p>
+                <div class="feed-meta">Semantic Memory &bull; 2 hours ago</div>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="feed-content">
+                <p>Visited "Blue Bottle Coffee" in Downtown.</p>
+                <div class="feed-meta">Episodic Memory &bull; 5 hours ago</div>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-icon"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="feed-content">
+                <p>Deep work streak broken after 45 minutes by social media usage.</p>
+                <div class="feed-meta">Behavioral Pattern &bull; Yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="app-panel">
+          <div class="app-card-title">Goal Status</div>
+          <div class="feed-list">
+            <div class="feed-item">
+              <div class="feed-icon" style="color: #86fdb2;"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="feed-content">
+                <p>Consistent sleep schedule (7+ hours)</p>
+                <div class="feed-meta">On track &bull; 5 day streak</div>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="feed-icon" style="color: #ffb86c;"><i class="fa-solid fa-circle-exclamation"></i></div>
+              <div class="feed-content">
+                <p>Read 30 pages daily</p>
+                <div class="feed-meta">At risk &bull; Missed yesterday</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>

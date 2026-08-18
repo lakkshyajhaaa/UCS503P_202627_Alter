@@ -42,12 +42,68 @@
 
     <main class="app-content">
       <h1 class="app-page-title">Simulate Decision</h1>
-      <p class="app-page-sub">Internal application routing.</p>
+      <p class="app-page-sub">Ask Alter how you would handle a specific scenario based on your historical behavior and preferences.</p>
       
-      <div class="app-panel">
-        <p style="color:#aaa;">Content for Simulate Decision will be rendered here.</p>
+      <div class="app-panel" style="margin-bottom: 24px;">
+        <div class="app-card-title">Scenario</div>
+        <textarea id="sim-input" class="app-input" placeholder="Describe the decision or scenario in detail... e.g., I've been offered a promotion that requires 20% more travel, but comes with a 30% raise. Should I take it?"></textarea>
+        <button id="sim-btn" class="app-btn">Simulate Scenario</button>
+      </div>
+
+      <div id="sim-results" class="app-grid hidden" style="display: none;">
+        <div class="app-panel" style="grid-column: 1 / -1; border-color: var(--accent);">
+          <div class="app-card-title" style="color: var(--accent);">Alter Predicts</div>
+          <div class="metric-value">Decline the promotion.</div>
+          <div class="metric-label">Confidence: 82% &bull; Processing time: 1.2s</div>
+          
+          <div style="margin-top: 32px;">
+            <div class="app-card-title">Reasoning Breakdown</div>
+            <div class="feed-list">
+              <div class="feed-item">
+                <div class="feed-icon"><span class="badge badge-known">Known</span></div>
+                <div class="feed-content">
+                  <p>You have an active goal to "Spend more time at home with family."</p>
+                  <div class="feed-meta">Goal Tracker</div>
+                </div>
+              </div>
+              <div class="feed-item">
+                <div class="feed-icon"><span class="badge badge-known">Known</span></div>
+                <div class="feed-content">
+                  <p>You previously rejected a high-travel role in 2024 citing burnout.</p>
+                  <div class="feed-meta">Episodic Memory</div>
+                </div>
+              </div>
+              <div class="feed-item">
+                <div class="feed-icon"><span class="badge badge-inferred">Inferred</span></div>
+                <div class="feed-content">
+                  <p>You value work-life balance significantly higher than financial compensation.</p>
+                  <div class="feed-meta">Semantic Knowledge Graph</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </div>
+
+  <script>
+    document.getElementById('sim-btn').addEventListener('click', function() {
+      const btn = this;
+      const input = document.getElementById('sim-input').value;
+      if (!input) return;
+
+      btn.innerText = 'Simulating...';
+      btn.style.opacity = '0.7';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerText = 'Simulate Scenario';
+        btn.style.opacity = '1';
+        btn.disabled = false;
+        document.getElementById('sim-results').style.display = 'grid';
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
