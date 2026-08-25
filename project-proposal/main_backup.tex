@@ -1,0 +1,280 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{titling}
+
+% -----------------------------------------------------
+% Formats aligned with the requested plain style
+% -----------------------------------------------------
+
+\title{Alter}
+
+\pretitle{\begin{center}\bfseries\fontsize{18bp}{18bp}\selectfont}
+\posttitle{%
+  \par\end{center}
+  \begin{center}\large
+  A Personal Digital Twin That Learns You\\[1.5em]
+  Project Proposal for UCS503P\\
+  Submitted to: Paramveer Sindhu\\
+  \textbf{Thapar Institute of Engineering and Technology}
+  \end{center}
+  \vskip 0.5em%
+}
+
+\author{
+  Lakkshya Jha
+  \and 
+  Noorshan Singh
+  \and
+  Saksham Raj
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Artificial intelligence systems are increasingly capable of understanding information and assisting with complex tasks, yet most remain fundamentally generic. They know the world, but they have limited and often fragmented understanding of the individual using them.
+
+Alter proposes a personal digital twin that progressively learns an individual's memories, preferences, goals, decisions, habits, and behavioral patterns. Rather than functioning as another conversational assistant, Alter builds a continuously evolving representation of its user and uses this model for contextual memory retrieval, behavioral analysis, decision simulation, and adaptive goal optimization.
+
+The system follows a continuous cycle: Remember $\rightarrow$ Understand $\rightarrow$ Predict $\rightarrow$ Adapt $\rightarrow$ Learn. The project combines software engineering with natural language processing, semantic retrieval, behavioral modeling, machine learning, recommendation systems, and adaptive planning.
+\end{abstract}
+
+\section{Problem Statement}
+Most AI assistants understand general information but have only shallow, fragmented understanding of the individual using them. Personal information is distributed across conversations, notes, documents, memories, decisions, habits, goals, and schedules. This creates three core problems:
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{Fragmented Memory:} Important experiences, decisions, and information are distributed across disconnected systems.
+    \item \textbf{Static Personalization:} Most systems rely on fixed profiles or short-term context instead of continuously learning behavior.
+    \item \textbf{Generic Recommendations:} A strategy that works for one person may be ineffective for another because individuals have different routines, constraints, preferences, and behavioral patterns.
+\end{itemize}
+
+\section{Vision}
+\textit{``From AI that knows things to AI that knows you.''}
+
+Alter aims to build a digital representation that progressively becomes more familiar with its user.
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto, thick,
+    box/.style={draw=black, fill=white, thick, align=center, minimum width=3cm, minimum height=0.6cm}]
+    
+    \node[box] (remember) {REMEMBER};
+    \node[box, below of=remember] (understand) {UNDERSTAND};
+    \node[box, below of=understand] (predict) {PREDICT};
+    \node[box, below of=predict] (adapt) {ADAPT};
+    \node[box, below of=adapt] (learn) {LEARN};
+    
+    \draw[->] (remember) -- (understand);
+    \draw[->] (understand) -- (predict);
+    \draw[->] (predict) -- (adapt);
+    \draw[->] (adapt) -- (learn);
+    
+    \draw[->] (learn.east) to[bend right=60] node[right] {$\circlearrowleft$} (remember.east);
+\end{tikzpicture}
+\end{center}
+
+\section{Objectives}
+\begin{enumerate}[leftmargin=0.7cm]
+    \item Build persistent personal memory.
+    \item Model user preferences and behavior.
+    \item Retrieve contextually relevant memories.
+    \item Predict selected user preferences and decisions.
+    \item Optimize goal-oriented plans around individual constraints.
+    \item Learn from outcomes and improve future adaptations.
+    \item Provide transparent, user-controlled memory and predictions.
+    \item Evaluate the system using measurable retrieval, prediction, and behavioral metrics.
+\end{enumerate}
+
+\section{Proposed System}
+
+\subsection{Personal Memory}
+Alter maintains three memory layers that feed into a Dynamic User Model:
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{Semantic Memory:} \textit{``What do I know about you?''} Stable information: skills, interests, preferences, goals, important facts.
+    \item \textbf{Episodic Memory:} \textit{``What happened to you?''} Experiences, events, projects, conversations, previous decisions.
+    \item \textbf{Behavioral Memory:} \textit{``How do you tend to behave?''} Habits, productive periods, distractions, adherence patterns, and recurring decisions.
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}[node distance=3cm, thick]
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (sem) at (-3.5, 0) {Semantic\\Memory};
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (epi) at (0, 0) {Episodic\\Memory};
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (beh) at (3.5, 0) {Behavioral\\Memory};
+    
+    \node[draw, minimum width=8cm, minimum height=0.8cm, align=center] (model) at (0, -2) {\textbf{DYNAMIC USER MODEL}};
+    
+    \draw[->] (sem) -- (-1.5, -1.5);
+    \draw[->] (epi) -- (0, -1.5);
+    \draw[->] (beh) -- (1.5, -1.5);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Decision Simulation}
+\textbf{``What would I do?''}
+The user presents a hypothetical scenario. Alter retrieves relevant past decisions, preferences, goals, and behavioral evidence, and predicts the user's likely response.
+
+\vspace{0.5em}
+\noindent\textbf{Scenario:} \textit{``I have two free hours tonight. Would I work on my project or meet my friends?''}\\
+\textbf{Prediction:} WORK ON THE PROJECT (Confidence: 74\% -- illustrative example)\\
+\textbf{Evidence:} Similar previous decisions, current project priority, previous behavior under deadlines, stated long-term goals.
+
+\vspace{0.5em}
+\noindent\textbf{Prediction $\neq$ Recommendation:} Alter attempts to model what the user is likely to do rather than simply telling them what they should do.
+
+\subsection{Adaptive Goal Optimization}
+Alter learns when the user focuses, procrastinates, gets distracted, follows routines, and performs best. It then adapts plans around the user's actual life.
+
+\begin{center}
+GOAL $\rightarrow$ BEHAVIOR $\rightarrow$ CONSTRAINTS $\rightarrow$ OPTIMIZATION $\rightarrow$ OUTCOME
+\end{center}
+
+\noindent\textbf{Universal Use Cases:}
+\begin{itemize}[leftmargin=0.7cm]
+    \item Student --- exam preparation
+    \item Athlete --- training consistency
+    \item Creator --- creative workflow
+    \item Professional --- deep work
+    \item Entrepreneur --- long-term projects
+\end{itemize}
+
+\section{System Architecture}
+The architecture is modular and each major component can be developed and evaluated independently.
+
+\begin{center}
+\begin{tikzpicture}[node distance=1cm, auto, thick,
+    layer/.style={draw=black, thick, align=center, minimum width=8cm, minimum height=0.6cm},
+    box/.style={draw=black, thick, align=center, minimum width=2.2cm, minimum height=0.5cm},
+    arrow/.style={->, thick}]
+    
+    \node[layer, font=\bfseries] (user) at (0, 0) {USER};
+    \node[layer] (interaction) at (0, -1) {INTERACTION LAYER};
+    \node[layer] (data) at (0, -2) {DATA PROCESSING};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (memory_sys) at (0, -3) {};
+    \node[yshift=0.5cm, font=\bfseries] at (memory_sys.center) {MEMORY SYSTEM};
+    \node[box] (sem) at (-2.6, -3.9) {Semantic};
+    \node[box] (epi) at (0, -3.9) {Episodic};
+    \node[box] (beh) at (2.6, -3.9) {Behavioral};
+    
+    \node[layer] (retrieval) at (0, -5) {RETRIEVAL ENGINE};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (user_model) at (0, -6) {};
+    \node[yshift=0.5cm, font=\bfseries] at (user_model.center) {USER MODEL};
+    \node[box, minimum width=1.5cm] (prefs) at (-3, -6.9) {Prefs};
+    \node[box, minimum width=1.5cm] (behs) at (-1, -6.9) {Behaviors};
+    \node[box, minimum width=1.5cm] (goals) at (1, -6.9) {Goals};
+    \node[box, minimum width=1.5cm] (cons) at (3, -6.9) {Constraints};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (engine) at (0, -8) {};
+    \node[yshift=0.5cm, font=\bfseries] at (engine.center) {ALTER ENGINE};
+    \node[box, minimum width=2cm] (pred) at (-2.5, -8.9) {Prediction};
+    \node[box, minimum width=2.4cm] (pers) at (0, -8.9) {Personalization};
+    \node[box, minimum width=2cm] (opt) at (2.5, -8.9) {Optimization};
+    
+    \node[layer] (output) at (0, -10) {PERSONALIZED OUTPUT};
+    
+    \draw[arrow] (user) -- (interaction);
+    \draw[arrow] (interaction) -- (data);
+    \draw[arrow] (data) -- (0,-2.6);
+    \draw[arrow] (memory_sys) -- (retrieval);
+    \draw[arrow] (retrieval) -- (0,-5.6);
+    \draw[arrow] (user_model) -- (0,-7.6);
+    \draw[arrow] (engine) -- (output);
+    
+    \draw[->, thick, dashed] (output.west) -- ++(-1.5,0) |- node[near start, left] {FEEDBACK} (user_model.west);
+    
+\end{tikzpicture}
+\end{center}
+
+\section{Technology Direction}
+Alter will NOT depend on a direct hosted LLM API. The AI layer will remain modular and model-agnostic, allowing different models and algorithms to be evaluated without redesigning the complete application.
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{Frontend:} React / Next.js
+    \item \textbf{Backend:} Python, FastAPI
+    \item \textbf{Database:} PostgreSQL
+    \item \textbf{Vector Retrieval:} pgvector / vector database, Sentence Transformers
+    \item \textbf{AI / ML:} PyTorch, Scikit-learn
+    \item \textbf{NLP:} spaCy, Open-source NLP models
+    \item \textbf{Infrastructure:} Git, GitHub, Docker, Automated testing, CI/CD
+\end{itemize}
+
+\section{Development Methodology}
+We will use an iterative Agile development approach.
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{PHASE 1 (Research \& Requirements):} Define scope, users, use cases, architecture, and evaluation criteria.
+    \item \textbf{PHASE 2 (Memory System):} Build semantic, episodic, and behavioral memory with contextual retrieval.
+    \item \textbf{PHASE 3 (User Modeling):} Extract preferences, goals, patterns, and behavioral tendencies.
+    \item \textbf{PHASE 4 (Alter Engine):} Implement personalized interaction and decision simulation.
+    \item \textbf{PHASE 5 (Adaptive Optimization):} Implement goal planning, schedule adaptation, and intervention tracking.
+    \item \textbf{PHASE 6 (Evaluation):} Measure retrieval, prediction, and behavioral adaptation.
+    \item \textbf{PHASE 7 (Integration):} Testing, refinement, security, deployment, and final demonstration.
+\end{itemize}
+
+\section{Evaluation}
+The system must be measurable rather than judged only by subjective impressions.
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{Memory Retrieval:} Precision, Recall, and Top-K retrieval accuracy.
+    \item \textbf{Preference Prediction:} Compare predicted preferences against actual user preferences.
+    \item \textbf{Decision Prediction:} Prediction accuracy, confidence calibration, and consistency.
+    \item \textbf{Behavioral Adaptation:} Measure whether personalized interventions improve adherence or other predefined outcomes.
+\end{itemize}
+
+\begin{center}
+INPUT $\rightarrow$ PREDICTION $\rightarrow$ ACTUAL BEHAVIOR $\rightarrow$ MEASURE $\rightarrow$ LEARN
+\end{center}
+
+\textit{Note: The system has not yet been evaluated. Any accuracy metrics discussed during development are solely for illustrative evaluation scenarios and do not represent achieved results.}
+
+\section{Functional Requirements}
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{FR1 --- User Profile:} Create and manage a personal profile.
+    \item \textbf{FR2 --- Personal Information:} Add notes, experiences, preferences, goals, and other relevant information.
+    \item \textbf{FR3 --- Memory Management:} Store, retrieve, edit, and delete memories.
+    \item \textbf{FR4 --- Contextual Retrieval:} Retrieve relevant memories based on current context.
+    \item \textbf{FR5 --- User Modeling:} Continuously update preferences and behavioral patterns.
+    \item \textbf{FR6 --- Decision Simulation:} Predict likely user choices in hypothetical scenarios.
+    \item \textbf{FR7 --- Adaptive Planning:} Generate personalized plans around user constraints.
+    \item \textbf{FR8 --- Feedback:} Learn from outcomes of recommendations and interventions.
+\end{itemize}
+
+\section{Privacy \& Ethics}
+Because Alter handles highly personal information, privacy is a core design requirement. The user should be able to view stored memories, correct inaccurate information, delete memories, control collected data, and understand prediction evidence.
+
+The system will explicitly distinguish between:
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{KNOWN:} \textit{``You usually exercise at 6 PM.''}
+    \item \textbf{INFERRED:} \textit{``You appear to prefer exercising in the evening.''}
+    \item \textbf{PREDICTED:} \textit{``You are likely to exercise at 6 PM today.''}
+\end{itemize}
+The system should never present an inference as an established fact.
+
+\section{Future Scope}
+Future developments may include:
+\begin{itemize}[leftmargin=0.7cm]
+    \item Multimodal memory
+    \item Temporal behavior modeling
+    \item Environmental intelligence
+    \item More advanced behavioral prediction
+    \item Knowledge graph integration
+    \item Twin simulation
+\end{itemize}
+
+\section{Conclusion}
+\begin{quote}
+\textit{``AI should not only know the world. It should know the person using it.''}
+\end{quote}
+
+\textbf{ALTER:} Remember. Understand. Predict. Adapt. Learn.
+
+\end{document}
