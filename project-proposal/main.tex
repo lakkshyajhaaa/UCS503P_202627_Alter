@@ -3,59 +3,36 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{xcolor}
-
-% -----------------------------------------------------
-% bvraghav-tiet-ucs503p-article.sty
-% -----------------------------------------------------
-
-% Variable: Lab Instructor
-\makeatletter \newcommand{\BvrSetLabInstructor}[1]{%
-  \gdef\Bvr@LabInstructor{#1}}
-% default
-\newcommand{\Bvr@LabInstructor}{Dr. Raghav %
-  B. Venkataramaiyer}
-% public accessor
-\newcommand{\BvrLabInstructorValue}{\Bvr@LabInstructor}
-\makeatother
-
-% Add subtitle
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
 \usepackage{titling}
-% -- Set title bold
-\pretitle{\begin{center}\bfseries\fontsize{18bp}{18bp}\selectfont}
-\makeatletter
-\newcommand{\BvrSubtitle}[1]{%
-  \posttitle{%
-    \par\end{center}
-    \begin{center}\large#1\end{center}
-    \vskip 0.5em}%
-}
-\makeatother
-
-% Hints in the section title(s)
-\newcommand{\BvrHint}[1]{%
-  {\normalfont\normalsize\itshape\hfill #1}}
 
 % -----------------------------------------------------
+% Formats aligned with the requested plain style
+% -----------------------------------------------------
 
-\title{Grievance-Resolution System for a Tier-2/3 City}
+\title{Alter}
 
-\BvrSetLabInstructor{Dr. Raghav B. Venkataramaiyer}
-
-\BvrSubtitle{%
-  Project Proposal for UCS503P  \\
-  Submitted to: \BvrLabInstructorValue \\ \bfseries
-  Thapar Institute of Engineering and Technology% 
+\pretitle{\begin{center}\bfseries\fontsize{18bp}{18bp}\selectfont}
+\posttitle{%
+  \par\end{center}
+  \begin{center}\large
+  A Personal Digital Twin That Learns You\\[1.5em]
+  Project Proposal for UCS503P\\
+  Submitted to: Paramveer Sindhu\\
+  \textbf{Thapar Institute of Engineering and Technology}
+  \end{center}
+  \vskip 0.5em%
 }
 
 \author{
-  Vidya Vaidyanathan, CSED%
-  \thanks{Roll No: \texttt{1024030xxx}, %
-    Email: \texttt{vvaidhanathan\_be24\@thapar.edu}}
+  Lakkshya Jha
   \and 
-  Bhanurekha Ganesan, CSED%
-  \thanks{Roll No: \texttt{1024030xxx}, %
-    Email: \texttt{bganesan\_be24\@thapar.edu}}
+  Noorshan Singh
+  \and
+  Saksham Raj
 }
 
 \date{\today}
@@ -63,180 +40,241 @@
 \begin{document}
 \maketitle
 
-\section{Higher-order goal%
-  \BvrHint{\ldots secondary framing}}
-This project aims to improve sustainable urban
-governance by reducing the time and effort required to
-resolve citizen issues. While the topic is broader than
-any single municipality, the immediate engineering
-objective is to translate \emph{efficient public
-  service delivery} into a measurable, deployable
-software solution.
+\begin{abstract}
+Artificial intelligence systems are increasingly capable of understanding information and assisting with complex tasks, yet most remain fundamentally generic. They know the world, but they have limited and often fragmented understanding of the individual using them.
 
-\section{Time-to-value %
-\BvrHint{\ldots primary heuristic}}
-\begin{itemize}[leftmargin=0.7cm]
-    \item We will deliver meaningful increments quickly by prototyping the core user workflow and validating it with users within a short iteration window.
-    \item We will prioritize fast feedback over perfection by using weekly iterations (and targeting CI-backed automation early) to reduce release friction.
-    \item Success is defined by what can be delivered and measured in the first iteration, then improved based on user feedback.
-\end{itemize}
+Alter proposes a personal digital twin that progressively learns an individual's memories, preferences, goals, decisions, habits, and behavioral patterns. Rather than functioning as another conversational assistant, Alter builds a continuously evolving representation of its user and uses this model for contextual memory retrieval, behavioral analysis, decision simulation, and adaptive goal optimization.
+
+The system follows a continuous cycle: Remember $\rightarrow$ Understand $\rightarrow$ Predict $\rightarrow$ Adapt $\rightarrow$ Learn. The project combines software engineering with natural language processing, semantic retrieval, behavioral modeling, machine learning, recommendation systems, and adaptive planning.
+\end{abstract}
 
 \section{Problem Statement}
-Citizens in a tier-2/3 Indian city face delays and uncertainty when reporting local issues (e.g., streetlight outages, water leakage, garbage accumulation, road potholes). Common pain points include:
+Most AI assistants understand general information but have only shallow, fragmented understanding of the individual using them. Personal information is distributed across conversations, notes, documents, memories, decisions, habits, goals, and schedules. This creates three core problems:
+
 \begin{itemize}[leftmargin=0.7cm]
-    \item \textbf{Fragmentation:} complaints are often made via multiple channels (calls, social media, paper forms), causing lost context.
-    \item \textbf{Low transparency:} citizens cannot easily see the status of their complaint (e.g., ``received'', ``assigned'', ``in progress'', ``resolved'').
-    \item \textbf{Slow coordination:} departments/field teams lack a unified, trackable workflow with clear ownership.
-    \item \textbf{Poor data quality:} duplicate or incomplete reports force rework and extend resolution time.
+    \item \textbf{Fragmented Memory:} Important experiences, decisions, and information are distributed across disconnected systems.
+    \item \textbf{Static Personalization:} Most systems rely on fixed profiles or short-term context instead of continuously learning behavior.
+    \item \textbf{Generic Recommendations:} A strategy that works for one person may be ineffective for another because individuals have different routines, constraints, preferences, and behavioral patterns.
 \end{itemize}
 
-\textbf{Why this matters now (contextual relevance):} In an urban setting with limited staff bandwidth, even small process improvements can noticeably reduce resolution delays and repeated submissions.
+\section{Vision}
+\textit{``From AI that knows things to AI that knows you.''}
 
-\section{Proposed Solution %
-\BvrHint{\ldots Software Proposition}}
-\subsection{Overview}
-Build a \textbf{web-based} ``Grievance-to-Resolution'' system with the following components:
-\begin{itemize}[leftmargin=0.7cm]
-    \item \textbf{Citizen submission portal:} users submit an issue with photo (optional), category, and locality/ward.
-    \item \textbf{Automated triage:} basic duplicate detection and completeness checks.
-    \item \textbf{Department workflow:} assign issues to relevant department/team and update statuses.
-    \item \textbf{Status transparency:} citizens track status and receive notifications when resolved.
-    \item \textbf{Admin/ops dashboard:} performance summaries (resolution time, backlog).
-\end{itemize}
+Alter aims to build a digital representation that progressively becomes more familiar with its user.
 
-\subsection{Core workflow}
-\begin{enumerate}[leftmargin=0.7cm]
-    \item Citizen creates a complaint and receives a complaint ID immediately.
-    \item System validates completeness and suggests possible duplicates (lightweight similarity on text/category and approximate location).
-    \item Department staff update status (Received $\rightarrow$ Assigned $\rightarrow$ In Progress $\rightarrow$ Resolved).
-    \item Citizen views status updates and resolution notes.
-\end{enumerate}
-
-\subsection{Operational constraints for an educational, tier-2/3 setting}
-\begin{itemize}[leftmargin=0.7cm]
-    \item Keep the solution usable on low-to-mid range devices via responsive web design.
-    \item Avoid dependence on advanced research algorithms; focus on workflow, automation, and system correctness.
-    \item Design for deployability using common web hosting and managed databases.
-\end{itemize}
-
-\section{Solution Approach %
-\BvrHint{\ldots Engineering focus}}
-This is an engineering course project, so we focus on scalable administrative and workflow aspects rather than novel algorithm research.
-
-\subsection{Duplicate/quality assistance %
-\BvrHint{\ldots non-research}}
-Duplicate detection will be heuristic-based:
-\begin{itemize}[leftmargin=0.7cm]
-    \item Normalize text (category + short description keywords).
-    \item Use a simple similarity measure (e.g., token overlap / TF-IDF cosine with threshold) without claiming state-of-the-art.
-    \item Show top candidate duplicates to staff for decision; never fully auto-delete or auto-reject.
-\end{itemize}
-
-\subsection{Web architecture %
-\BvrHint{\ldots web-based solution}}
-A typical 3-tier web architecture:
-\begin{itemize}[leftmargin=0.7cm]
-    \item \textbf{Frontend:} responsive UI for citizens and staff (status pages, submission form, dashboard).
-    \item \textbf{Backend API:} authentication, complaint submission, status transitions, assignment logic.
-    \item \textbf{Database:} store users, complaints, status history, attachments metadata.
-\end{itemize}
-
-\subsection{CI/CD and fast delivery enabler}
-CI/CD will be used to:
-\begin{itemize}[leftmargin=0.7cm]
-    \item Automatically build and run tests on every change.
-    \item Produce repeatable deployment artifacts to staging.
-    \item Enable safe and frequent releases of incremental features.
-\end{itemize}
-
-\section{Evaluation Criterion %
-\BvrHint{\ldots measurable and attributable}}
-We define success using measurable metrics tied to the core workflow.
-
-\subsection{Primary evaluation metric}
-\textbf{Time-to-acknowledgement (TTA):} time between complaint submission and ``Received/Assigned'' status creation in the system.
-\begin{itemize}[leftmargin=0.7cm]
-    \item Target: median TTA $\le$ 2 hours during pilot window.
-    \item Attribution: measured from database timestamps (submission vs. first status update by staff).
-\end{itemize}
-
-\subsection{Secondary evaluation metrics}
-\begin{itemize}[leftmargin=0.7cm]
-    \item \textbf{Resolution time reduction:} reduce time-to-resolved compared to baseline process (even if baseline is collected via survey).
-    \item \textbf{Duplicate rate:} percentage of complaints flagged as duplicates and resolved without rework.
-    \item \textbf{User clarity:} citizen-reported clarity of status using a simple 1--5 feedback question.
-    \item \textbf{Reliability:} availability of staging/production for login and submission during business hours (e.g., $\ge$ 99\% uptime in pilot).
-\end{itemize}
-
-\subsection{Pilot validation plan %
-\BvrHint{\ldots high-level}}
-\begin{itemize}[leftmargin=0.7cm]
-    \item Recruit 10--20 pilot users (citizens) and 3--5 staff roles (department simulation if real staff unavailable).
-    \item Compare metrics before/after within the iteration window by logging baseline estimates via short interviews or existing process observations.
-\end{itemize}
-
-\section{Scalability %
-\BvrHint{\ldots with foresight}}
-The proposition should scale in both theoretical and practical senses.
-
-\begin{enumerate}[leftmargin=0.7cm]
-    \item \textbf{Scalable (theoretically):} The system should support growth in number of complaints and concurrent dashboard usage by:
-    \begin{itemize}[leftmargin=0.7cm]
-        \item decoupling components (frontend/backend),
-        \item enabling pagination and indexing for common queries,
-        \item using stateless API design.
-    \end{itemize}
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, auto, thick,
+    box/.style={draw=black, fill=white, thick, align=center, minimum width=3cm, minimum height=0.6cm}]
     
-    \item \textbf{Operationally deployable (practically):} The system should run on common web hosting:
-    \begin{itemize}[leftmargin=0.7cm]
-        \item managed database,
-        \item containerized or platform-hosted deployment,
-        \item CI/CD pipeline for staging/production.
-    \end{itemize}
+    \node[box] (remember) {REMEMBER};
+    \node[box, below of=remember] (understand) {UNDERSTAND};
+    \node[box, below of=understand] (predict) {PREDICT};
+    \node[box, below of=predict] (adapt) {ADAPT};
+    \node[box, below of=adapt] (learn) {LEARN};
+    
+    \draw[->] (remember) -- (understand);
+    \draw[->] (understand) -- (predict);
+    \draw[->] (predict) -- (adapt);
+    \draw[->] (adapt) -- (learn);
+    
+    \draw[->] (learn.east) to[bend right=60] node[right] {$\circlearrowleft$} (remember.east);
+\end{tikzpicture}
+\end{center}
+
+\section{Objectives}
+\begin{enumerate}[leftmargin=0.7cm]
+    \item Build persistent personal memory.
+    \item Model user preferences and behavior.
+    \item Retrieve contextually relevant memories.
+    \item Predict selected user preferences and decisions.
+    \item Optimize goal-oriented plans around individual constraints.
+    \item Learn from outcomes and improve future adaptations.
+    \item Provide transparent, user-controlled memory and predictions.
+    \item Evaluate the system using measurable retrieval, prediction, and behavioral metrics.
 \end{enumerate}
 
-\section{Engine availability heuristic}
-A mature set of ``engines'' (tooling/services) is available to implement this as a web-based project:
-\begin{itemize}[leftmargin=0.7cm]
-    \item Web framework for REST APIs and templated/reactive pages.
-    \item Managed relational or document database.
-    \item Authentication approach (token-based or session-based).
-    \item Object storage for optional attachments (or local storage for pilot).
-    \item Test framework for unit/integration tests.
-    \item CI runner and staging deployment target.
-\end{itemize}
-We will use these mature components to focus on workflow design, correctness, and measurement rather than inventing new infrastructure.
+\section{Proposed System}
 
-\section{Project scope and deliverables %
-\BvrHint{\ldots iteration-friendly}}
-\subsection{Initial deliverable %
-\BvrHint{\ldots first iteration}}
+\subsection{Personal Memory}
+Alter maintains three memory layers that feed into a Dynamic User Model:
 \begin{itemize}[leftmargin=0.7cm]
-    \item Citizen submission form + complaint ID generation
-    \item Staff workflow: update status and assignment
-    \item Citizen status page: view timeline/history
-    \item Basic logging and timestamps for TTA measurement
-    \item CI: build + backend unit tests + linting
-    \item CD to staging with a single command or pipeline job
+    \item \textbf{Semantic Memory:} \textit{``What do I know about you?''} Stable information: skills, interests, preferences, goals, important facts.
+    \item \textbf{Episodic Memory:} \textit{``What happened to you?''} Experiences, events, projects, conversations, previous decisions.
+    \item \textbf{Behavioral Memory:} \textit{``How do you tend to behave?''} Habits, productive periods, distractions, adherence patterns, and recurring decisions.
 \end{itemize}
 
-\subsection{Subsequent deliverables}
+\begin{center}
+\begin{tikzpicture}[node distance=3cm, thick]
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (sem) at (-3.5, 0) {Semantic\\Memory};
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (epi) at (0, 0) {Episodic\\Memory};
+    \node[draw, minimum width=2.5cm, minimum height=0.8cm, align=center] (beh) at (3.5, 0) {Behavioral\\Memory};
+    
+    \node[draw, minimum width=8cm, minimum height=0.8cm, align=center] (model) at (0, -2) {\textbf{DYNAMIC USER MODEL}};
+    
+    \draw[->] (sem) -- (-1.5, -1.5);
+    \draw[->] (epi) -- (0, -1.5);
+    \draw[->] (beh) -- (1.5, -1.5);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Decision Simulation}
+\textbf{``What would I do?''}
+The user presents a hypothetical scenario. Alter retrieves relevant past decisions, preferences, goals, and behavioral evidence, and predicts the user's likely response.
+
+\vspace{0.5em}
+\noindent\textbf{Scenario:} \textit{``I have two free hours tonight. Would I work on my project or meet my friends?''}\\
+\textbf{Prediction:} WORK ON THE PROJECT (Confidence: 74\% -- illustrative example)\\
+\textbf{Evidence:} Similar previous decisions, current project priority, previous behavior under deadlines, stated long-term goals.
+
+\vspace{0.5em}
+\noindent\textbf{Prediction $\neq$ Recommendation:} Alter attempts to model what the user is likely to do rather than simply telling them what they should do.
+
+\subsection{Adaptive Goal Optimization}
+Alter learns when the user focuses, procrastinates, gets distracted, follows routines, and performs best. It then adapts plans around the user's actual life.
+
+\begin{center}
+GOAL $\rightarrow$ BEHAVIOR $\rightarrow$ CONSTRAINTS $\rightarrow$ OPTIMIZATION $\rightarrow$ OUTCOME
+\end{center}
+
+\noindent\textbf{Universal Use Cases:}
 \begin{itemize}[leftmargin=0.7cm]
-    \item Lightweight duplicate suggestions with staff review
-    \item Notification layer (email/SMS optional in later iteration; can start with in-app notifications)
-    \item Admin dashboard for metrics and backlog
-    \item Improved search/filtering and indexed queries for scale readiness
+    \item Student --- exam preparation
+    \item Athlete --- training consistency
+    \item Creator --- creative workflow
+    \item Professional --- deep work
+    \item Entrepreneur --- long-term projects
 \end{itemize}
 
-\section{Risks and mitigations}
+\section{System Architecture}
+The architecture is modular and each major component can be developed and evaluated independently.
+
+\begin{center}
+\begin{tikzpicture}[node distance=1cm, auto, thick,
+    layer/.style={draw=black, thick, align=center, minimum width=8cm, minimum height=0.6cm},
+    box/.style={draw=black, thick, align=center, minimum width=2.2cm, minimum height=0.5cm},
+    arrow/.style={->, thick}]
+    
+    \node[layer, font=\bfseries] (user) at (0, 0) {USER};
+    \node[layer] (interaction) at (0, -1) {INTERACTION LAYER};
+    \node[layer] (data) at (0, -2) {DATA PROCESSING};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (memory_sys) at (0, -3) {};
+    \node[yshift=0.5cm, font=\bfseries] at (memory_sys.center) {MEMORY SYSTEM};
+    \node[box] (sem) at (-2.6, -3.9) {Semantic};
+    \node[box] (epi) at (0, -3.9) {Episodic};
+    \node[box] (beh) at (2.6, -3.9) {Behavioral};
+    
+    \node[layer] (retrieval) at (0, -5) {RETRIEVAL ENGINE};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (user_model) at (0, -6) {};
+    \node[yshift=0.5cm, font=\bfseries] at (user_model.center) {USER MODEL};
+    \node[box, minimum width=1.5cm] (prefs) at (-3, -6.9) {Prefs};
+    \node[box, minimum width=1.5cm] (behs) at (-1, -6.9) {Behaviors};
+    \node[box, minimum width=1.5cm] (goals) at (1, -6.9) {Goals};
+    \node[box, minimum width=1.5cm] (cons) at (3, -6.9) {Constraints};
+    
+    \node[layer, minimum height=1.6cm, yshift=-0.4cm] (engine) at (0, -8) {};
+    \node[yshift=0.5cm, font=\bfseries] at (engine.center) {ALTER ENGINE};
+    \node[box, minimum width=2cm] (pred) at (-2.5, -8.9) {Prediction};
+    \node[box, minimum width=2.4cm] (pers) at (0, -8.9) {Personalization};
+    \node[box, minimum width=2cm] (opt) at (2.5, -8.9) {Optimization};
+    
+    \node[layer] (output) at (0, -10) {PERSONALIZED OUTPUT};
+    
+    \draw[arrow] (user) -- (interaction);
+    \draw[arrow] (interaction) -- (data);
+    \draw[arrow] (data) -- (0,-2.6);
+    \draw[arrow] (memory_sys) -- (retrieval);
+    \draw[arrow] (retrieval) -- (0,-5.6);
+    \draw[arrow] (user_model) -- (0,-7.6);
+    \draw[arrow] (engine) -- (output);
+    
+    \draw[->, thick, dashed] (output.west) -- ++(-1.5,0) |- node[near start, left] {FEEDBACK} (user_model.west);
+    
+\end{tikzpicture}
+\end{center}
+
+\section{Technology Direction}
+Alter will NOT depend on a direct hosted LLM API. The AI layer will remain modular and model-agnostic, allowing different models and algorithms to be evaluated without redesigning the complete application.
+
 \begin{itemize}[leftmargin=0.7cm]
-    \item \textbf{Data privacy / consent:} minimize collected data; keep attachments optional; store only what is needed.
-    \item \textbf{Staff adoption:} provide an easy UI for status updates; keep workflow steps minimal; include shortcuts.
-    \item \textbf{Evaluation measurement ambiguity:} instrument timestamps and define clear status transitions before development begins.
-    \item \textbf{Operational issues in pilot:} use staging early; ensure CI/CD produces repeatable deployments.
+    \item \textbf{Frontend:} React / Next.js
+    \item \textbf{Backend:} Python, FastAPI
+    \item \textbf{Database:} PostgreSQL
+    \item \textbf{Vector Retrieval:} pgvector / vector database, Sentence Transformers
+    \item \textbf{AI / ML:} PyTorch, Scikit-learn
+    \item \textbf{NLP:} spaCy, Open-source NLP models
+    \item \textbf{Infrastructure:} Git, GitHub, Docker, Automated testing, CI/CD
 \end{itemize}
 
-\section{Summary}
-This project proposes a deployable web platform to reduce grievance handling delays in a tier-2/3 city context. It meets the course criteria by emphasizing time-to-value through rapid iterations, implementing CI/CD to support frequent safe releases, and using measurable evaluation criteria (especially time-to-acknowledgement). It remains focused on engineering workflow and scalability readiness rather than research-driven novelty.
+\section{Development Methodology}
+We will use an iterative Agile development approach.
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{PHASE 1 (Research \& Requirements):} Define scope, users, use cases, architecture, and evaluation criteria.
+    \item \textbf{PHASE 2 (Memory System):} Build semantic, episodic, and behavioral memory with contextual retrieval.
+    \item \textbf{PHASE 3 (User Modeling):} Extract preferences, goals, patterns, and behavioral tendencies.
+    \item \textbf{PHASE 4 (Alter Engine):} Implement personalized interaction and decision simulation.
+    \item \textbf{PHASE 5 (Adaptive Optimization):} Implement goal planning, schedule adaptation, and intervention tracking.
+    \item \textbf{PHASE 6 (Evaluation):} Measure retrieval, prediction, and behavioral adaptation.
+    \item \textbf{PHASE 7 (Integration):} Testing, refinement, security, deployment, and final demonstration.
+\end{itemize}
+
+\section{Evaluation}
+The system must be measurable rather than judged only by subjective impressions.
+
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{Memory Retrieval:} Precision, Recall, and Top-K retrieval accuracy.
+    \item \textbf{Preference Prediction:} Compare predicted preferences against actual user preferences.
+    \item \textbf{Decision Prediction:} Prediction accuracy, confidence calibration, and consistency.
+    \item \textbf{Behavioral Adaptation:} Measure whether personalized interventions improve adherence or other predefined outcomes.
+\end{itemize}
+
+\begin{center}
+INPUT $\rightarrow$ PREDICTION $\rightarrow$ ACTUAL BEHAVIOR $\rightarrow$ MEASURE $\rightarrow$ LEARN
+\end{center}
+
+\textit{Note: The system has not yet been evaluated. Any accuracy metrics discussed during development are solely for illustrative evaluation scenarios and do not represent achieved results.}
+
+\section{Functional Requirements}
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{FR1 --- User Profile:} Create and manage a personal profile.
+    \item \textbf{FR2 --- Personal Information:} Add notes, experiences, preferences, goals, and other relevant information.
+    \item \textbf{FR3 --- Memory Management:} Store, retrieve, edit, and delete memories.
+    \item \textbf{FR4 --- Contextual Retrieval:} Retrieve relevant memories based on current context.
+    \item \textbf{FR5 --- User Modeling:} Continuously update preferences and behavioral patterns.
+    \item \textbf{FR6 --- Decision Simulation:} Predict likely user choices in hypothetical scenarios.
+    \item \textbf{FR7 --- Adaptive Planning:} Generate personalized plans around user constraints.
+    \item \textbf{FR8 --- Feedback:} Learn from outcomes of recommendations and interventions.
+\end{itemize}
+
+\section{Privacy \& Ethics}
+Because Alter handles highly personal information, privacy is a core design requirement. The user should be able to view stored memories, correct inaccurate information, delete memories, control collected data, and understand prediction evidence.
+
+The system will explicitly distinguish between:
+\begin{itemize}[leftmargin=0.7cm]
+    \item \textbf{KNOWN:} \textit{``You usually exercise at 6 PM.''}
+    \item \textbf{INFERRED:} \textit{``You appear to prefer exercising in the evening.''}
+    \item \textbf{PREDICTED:} \textit{``You are likely to exercise at 6 PM today.''}
+\end{itemize}
+The system should never present an inference as an established fact.
+
+\section{Future Scope}
+Future developments may include:
+\begin{itemize}[leftmargin=0.7cm]
+    \item Multimodal memory
+    \item Temporal behavior modeling
+    \item Environmental intelligence
+    \item More advanced behavioral prediction
+    \item Knowledge graph integration
+    \item Twin simulation
+\end{itemize}
+
+\section{Conclusion}
+\begin{quote}
+\textit{``AI should not only know the world. It should know the person using it.''}
+\end{quote}
+
+\textbf{ALTER:} Remember. Understand. Predict. Adapt. Learn.
 
 \end{document}
