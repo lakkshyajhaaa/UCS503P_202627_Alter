@@ -44,73 +44,32 @@
       <h1 class="app-page-title">Overview</h1>
       <p class="app-page-sub">Your digital twin's current state and recent activity.</p>
       
-      <div class="app-grid">
-        <div class="app-card">
-          <div class="app-card-title">Total Memories</div>
-          <div class="metric-value">14,208</div>
-          <div class="metric-label">+124 this week</div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-title">Prediction Accuracy</div>
-          <div class="metric-value">84.2%</div>
-          <div class="metric-label">Based on 152 simulated decisions</div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-title">Active Goals</div>
-          <div class="metric-value">3</div>
-          <div class="metric-label">Focus, Fitness, Deep Work</div>
-        </div>
+      <div class="app-grid" id="overview-metrics">
+        <p style="color:#aaa;">Loading Twin metrics...</p>
       </div>
 
       <div class="app-panel" style="margin-bottom: 32px;">
         <div class="app-card-title">Simulate Scenario</div>
-        <input type="text" class="app-input" placeholder="e.g. Should I accept the dinner invitation for Thursday night?">
-        <button class="app-btn" onclick="window.location.href='/app/decisions/simulate-decision/'">Ask Alter</button>
+        <input type="text" class="app-input" id="sim-input-quick" placeholder="e.g. Should I accept the dinner invitation for Thursday night?">
+        <button class="app-btn" onclick="window.location.href='../decisions/simulate-decision/index.html'">Ask Alter</button>
       </div>
 
       <div class="app-grid">
         <div class="app-panel">
-          <div class="app-card-title">Recent Ingestions</div>
-          <div class="feed-list">
-            <div class="feed-item">
-              <div class="feed-icon"><i class="fa-solid fa-brain"></i></div>
-              <div class="feed-content">
-                <p>Identified preference: Prefers morning workouts over evening workouts.</p>
-                <div class="feed-meta">Semantic Memory &bull; 2 hours ago</div>
-              </div>
-            </div>
-            <div class="feed-item">
-              <div class="feed-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div class="feed-content">
-                <p>Visited "Blue Bottle Coffee" in Downtown.</p>
-                <div class="feed-meta">Episodic Memory &bull; 5 hours ago</div>
-              </div>
-            </div>
-            <div class="feed-item">
-              <div class="feed-icon"><i class="fa-solid fa-chart-line"></i></div>
-              <div class="feed-content">
-                <p>Deep work streak broken after 45 minutes by social media usage.</p>
-                <div class="feed-meta">Behavioral Pattern &bull; Yesterday</div>
-              </div>
-            </div>
+          <div class="app-card-title">Recent Twin Ingestions</div>
+          <div class="feed-list" id="overview-feed">
+            <p style="color:#aaa;">Loading activity...</p>
           </div>
         </div>
         
         <div class="app-panel">
-          <div class="app-card-title">Goal Status</div>
+          <div class="app-card-title">Active Goals</div>
           <div class="feed-list">
             <div class="feed-item">
-              <div class="feed-icon" style="color: #86fdb2;"><i class="fa-solid fa-check-circle"></i></div>
+              <div class="feed-icon"><i class="fa-solid fa-bullseye" style="color:var(--accent);"></i></div>
               <div class="feed-content">
-                <p>Consistent sleep schedule (7+ hours)</p>
-                <div class="feed-meta">On track &bull; 5 day streak</div>
-              </div>
-            </div>
-            <div class="feed-item">
-              <div class="feed-icon" style="color: #ffb86c;"><i class="fa-solid fa-circle-exclamation"></i></div>
-              <div class="feed-content">
-                <p>Read 30 pages daily</p>
-                <div class="feed-meta">At risk &bull; Missed yesterday</div>
+                <p>Maximize deep work blocks (Goal)</p>
+                <div class="feed-meta">Tracking via Episodic Memory</div>
               </div>
             </div>
           </div>
@@ -118,5 +77,64 @@
       </div>
     </main>
   </div>
+  <script>
+    const API_BASE_URL = '/api';
+
+    async function loadOverview() {
+      try {
+        const res = await fetch(`${API_BASE_URL}/overview`);
+        if (!res.ok) throw new Error("API Offline");
+        const data = await res.json();
+        
+        document.getElementById('overview-metrics').innerHTML = `
+          <div class="app-card">
+            <div class="app-card-title">Total Memories</div>
+            <div class="metric-value">${data.metrics.total_memories.toLocaleString()}</div>
+            <div class="metric-label">Structured events & patterns</div>
+          </div>
+          <div class="app-card">
+            <div class="app-card-title">Prediction Accuracy</div>
+            <div class="metric-value">${data.metrics.prediction_accuracy}%</div>
+            <div class="metric-label">Based on historical variance</div>
+          </div>
+          <div class="app-card">
+            <div class="app-card-title">Semantic Nodes</div>
+            <div class="metric-value">${data.semantic_insights.total_entities}</div>
+            <div class="metric-label">Rules extracted from data</div>
+          </div>
+        `;
+      } catch(e) {
+        document.getElementById('overview-metrics').innerHTML = `
+          <div class="app-card" style="grid-column: 1 / -1; border-color: #ff6b6b;">
+            <div class="app-card-title" style="color:#ff6b6b">Backend Disconnected</div>
+            <div class="metric-label">Ensure the Python API is running to view live metrics.</div>
+          </div>
+        `;
+      }
+
+      try {
+        const memRes = await fetch(`${API_BASE_URL}/memories/episodic?limit=3`);
+        if (memRes.ok) {
+            const memories = await memRes.json();
+            let feedHtml = '';
+            memories.forEach(mem => {
+                feedHtml += `
+                <div class="feed-item">
+                  <div class="feed-icon"><i class="fa-solid fa-brain"></i></div>
+                  <div class="feed-content">
+                    <p>${mem.content}</p>
+                    <div class="feed-meta">Episodic &bull; ${mem.metadata?.date || 'Recent'}</div>
+                  </div>
+                </div>
+                `;
+            });
+            document.getElementById('overview-feed').innerHTML = feedHtml;
+        }
+      } catch(e) {}
+    }
+    
+    document.addEventListener('DOMContentLoaded', loadOverview);
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
 </body>
 </html>
