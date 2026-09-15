@@ -6,6 +6,11 @@ from pydantic import BaseModel
 from typing import List, Optional
 import random
 
+import sys
+import os
+# Add the 'code' directory to Python path so Vercel can find 'src'
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from src.database import get_db, engine, Base
 from src.models import Memory, MemoryType
 
