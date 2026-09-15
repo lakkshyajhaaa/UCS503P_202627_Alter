@@ -1,4 +1,5 @@
 from src.database import engine, Base
+import src.models
 from sqlalchemy import text
 
 def init():

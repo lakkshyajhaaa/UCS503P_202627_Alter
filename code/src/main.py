@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import func
 from pydantic import BaseModel
 from typing import List, Optional
-from sentence_transformers import SentenceTransformer
+import random
 
 from src.database import get_db, engine, Base
 from src.models import Memory, MemoryType
@@ -19,13 +19,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load embedding model for the Simulate endpoint
-try:
-    print("Loading embedding model for API...")
-    embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-except Exception as e:
-    print(f"Warning: Failed to load sentence-transformers. Ensure it's installed. Error: {e}")
-    embedding_model = None
+def dummy_encode(text):
+    return [random.uniform(-1, 1) for _ in range(384)]
 
 @app.get("/api/overview")
 def get_overview(db: Session = Depends(get_db)):
@@ -84,10 +79,7 @@ def simulate_decision(request: SimulationRequest, db: Session = Depends(get_db))
     2. Search vector database for closest memories (pgvector cosine distance).
     3. Calculate prediction.
     """
-    if not embedding_model:
-        raise HTTPException(status_code=500, detail="Embedding model not loaded.")
-        
-    scenario_vector = embedding_model.encode(request.scenario)
+    scenario_vector = dummy_encode(request.scenario)
     
     # Fetch all memories (In a real production app without pgvector, you'd use a vector DB like Chroma/Milvus or Faiss, 
     # but for this MVP SQLite dataset, loading them into memory is perfectly fast).

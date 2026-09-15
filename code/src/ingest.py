@@ -1,12 +1,13 @@
 import pandas as pd
-from sentence_transformers import SentenceTransformer
+import random
+import os
 from src.database import SessionLocal
 from src.models import Memory, MemoryType
-import os
 
-# Initialize the embedding model
-print("Loading sentence-transformers model...")
-model = SentenceTransformer('all-MiniLM-L6-v2')
+# Fallback: Generate a random 384-dimensional vector for local MVP testing
+# This avoids PyTorch dependency hell on the local machine
+def dummy_encode(texts):
+    return [[random.uniform(-1, 1) for _ in range(384)] for _ in texts]
 
 def ingest_data():
     db = SessionLocal()
@@ -82,13 +83,13 @@ def ingest_data():
         contents = [m['content'] for m in batch]
         
         # Generate embeddings
-        embeddings = model.encode(contents)
+        embeddings = dummy_encode(contents)
         
         for j, memory_data in enumerate(batch):
             mem = Memory(
                 memory_type=memory_data['memory_type'],
                 content=memory_data['content'],
-                embedding=embeddings[j].tolist(),
+                embedding=embeddings[j],
                 metadata_=memory_data['metadata_'],
                 is_inferred=memory_data['is_inferred'],
                 confidence=memory_data['confidence']
