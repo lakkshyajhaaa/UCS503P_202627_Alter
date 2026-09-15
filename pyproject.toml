@@ -1,4 +1,4 @@
-﻿
+
 [build-system]
 requires = ["hatchling","hatch-vcs"]
 build-backend = "hatchling.build"
@@ -27,8 +27,18 @@ classifiers = [
     "Operating System :: POSIX",
     "Programming Language :: Unix Shell",
 ]
-dependencies = ["click"]
-
+dependencies = [
+    "click",
+    "fastapi",
+    "uvicorn",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "pgvector",
+    "pandas",
+    "sentence-transformers",
+    "pydantic",
+    "pydantic-settings"
+]
 [project.urls]
 Homepage = "https://github.com/tiet-ucs503/ucs503p-202627odd-template"
 Issues = "https://github.com/tiet-unc512/ucs503p-202627odd-template/issues"
