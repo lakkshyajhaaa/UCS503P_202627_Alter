@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "code/src/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "code/landing/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "code/src/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "code/landing/$1"
+    }
+  ]
+}
