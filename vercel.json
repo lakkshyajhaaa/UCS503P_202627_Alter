@@ -19,5 +19,10 @@
       "src": "/(.*)",
       "dest": "code/landing/$1"
     }
-  ]
+  ],
+  "functions": {
+    "code/src/main.py": {
+      "includeFiles": "code/src/alter_db.sqlite"
+    }
+  }
 }
