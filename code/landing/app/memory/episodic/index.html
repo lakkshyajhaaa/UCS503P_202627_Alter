@@ -54,32 +54,24 @@
   </div>
 
   <script>
-    // Simple CSV parser and visualizer to show the data working statically on Vercel
+    const API_BASE_URL = 'http://localhost:8000/api';
+
     async function loadEpisodicData() {
       try {
-        const response = await fetch('../../../data/continuous_60_day_ai_schedule_dataset.csv');
-        if (!response.ok) throw new Error("Could not load dataset");
-        const text = await response.text();
+        const response = await fetch(`${API_BASE_URL}/memories/episodic`);
+        if (!response.ok) throw new Error("Could not connect to Twin Engine Backend");
         
-        const lines = text.split('\\n').filter(l => l.trim().length > 0);
-        // header: date,day_of_week,time_start,time_end,duration_min,activity,category,is_fixed_schedule,class_hours,travel_minutes_today,academic_workload_before_slot_min,energy_level_1_5,distraction_level,priority,continuous_free_time_min,can_complete_task,best_time_for_task,task_completed
-        
+        const memories = await response.json();
         const feed = document.getElementById('episodic-feed');
         feed.innerHTML = '';
         
-        // Take latest 50 events (or from bottom)
-        const recentEvents = lines.slice(1, 51);
-        
-        recentEvents.forEach(line => {
-          const cols = line.split(',');
-          if (cols.length < 6) return;
-          
-          const date = cols[0];
-          const timeStart = cols[2];
-          const timeEnd = cols[3];
-          const activity = cols[5];
-          const category = cols[6];
-          
+        if (memories.length === 0) {
+            feed.innerHTML = '<p style="color:#aaa;">No episodic memories found.</p>';
+            return;
+        }
+
+        memories.forEach(mem => {
+          const category = mem.metadata?.category || 'General';
           const icon = category.toLowerCase().includes('academic') ? 'fa-book' : 
                        category.toLowerCase().includes('leisure') ? 'fa-gamepad' : 
                        category.toLowerCase().includes('routine') ? 'fa-clock' : 'fa-location-dot';
@@ -88,8 +80,8 @@
             <div class="feed-item">
               <div class="feed-icon"><i class="fa-solid ${icon}"></i></div>
               <div class="feed-content">
-                <p>Completed <strong>${activity}</strong></p>
-                <div class="feed-meta">${date} &bull; ${timeStart} - ${timeEnd} &bull; ${category}</div>
+                <p>${mem.content}</p>
+                <div class="feed-meta">${mem.metadata?.date || 'Unknown Date'} &bull; ${category}</div>
               </div>
             </div>
           `;
@@ -97,7 +89,12 @@
         });
         
       } catch (e) {
-        document.getElementById('episodic-feed').innerHTML = `<p style="color:#ff6b6b;">Error loading demo data: ${e.message}</p>`;
+        document.getElementById('episodic-feed').innerHTML = `
+          <div style="background: rgba(255,107,107,0.1); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,107,107,0.2);">
+            <p style="color:#ff6b6b; margin: 0;"><strong>Backend Disconnected</strong></p>
+            <p style="color:#aaa; font-size: 13px; margin-top: 4px;">Could not securely fetch memories from the Python backend. Ensure the server is running locally on port 8000.</p>
+          </div>
+        `;
       }
     }
     

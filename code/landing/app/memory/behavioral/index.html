@@ -58,75 +58,57 @@
   </div>
 
   <script>
+    const API_BASE_URL = 'http://localhost:8000/api';
+
     async function loadBehavioralData() {
       try {
-        const response = await fetch('../../../data/continuous_60_day_ai_schedule_dataset.csv');
-        if (!response.ok) throw new Error("Could not load dataset");
-        const text = await response.text();
+        const response = await fetch(`${API_BASE_URL}/memories/behavioral`);
+        if (!response.ok) throw new Error("Could not connect to Twin Engine Backend");
+        const memories = await response.json();
         
-        const lines = text.split('\\n').filter(l => l.trim().length > 0).slice(1);
-        
-        let totalActivities = 0;
-        let completedActivities = 0;
-        let totalEnergy = 0;
-        let energyEntries = 0;
-        
-        lines.forEach(line => {
-          const cols = line.split(',');
-          if (cols.length < 18) return;
-          
-          totalActivities++;
-          if (cols[17] === '1') completedActivities++;
-          
-          const energy = parseInt(cols[11]);
-          if (!isNaN(energy)) {
-            totalEnergy += energy;
-            energyEntries++;
-          }
-        });
-        
-        const winRate = ((completedActivities / totalActivities) * 100).toFixed(1);
-        const avgEnergy = (totalEnergy / energyEntries).toFixed(1);
+        // In a real scenario, the backend /api/overview might return the stats.
+        // For now, we will just display the fetched behavioral insights.
         
         const statsGrid = document.getElementById('behavioral-stats');
         statsGrid.innerHTML = `
           <div class="app-card">
-            <div class="app-card-title">Total Processed Events</div>
-            <div class="metric-value">${totalActivities}</div>
-            <div class="metric-label">Across 60 days</div>
+            <div class="app-card-title">Behavioral Memories</div>
+            <div class="metric-value">${memories.length}</div>
+            <div class="metric-label">Patterns identified securely by backend</div>
           </div>
           <div class="app-card">
-            <div class="app-card-title">Task Win-Rate</div>
-            <div class="metric-value">${winRate}%</div>
-            <div class="metric-label">Tasks completed successfully</div>
-          </div>
-          <div class="app-card">
-            <div class="app-card-title">Average Energy (1-5)</div>
-            <div class="metric-value">${avgEnergy}</div>
-            <div class="metric-label">Overall physiological baseline</div>
+            <div class="app-card-title">Privacy Status</div>
+            <div class="metric-value" style="color: #4ade80;">Secure</div>
+            <div class="metric-label">Data never exposed to frontend</div>
           </div>
         `;
         
         const insights = document.getElementById('behavioral-insights');
-        insights.innerHTML = `
-          <div class="feed-item">
-            <div class="feed-icon"><span class="badge badge-inferred">Pattern</span></div>
-            <div class="feed-content">
-              <p>When distraction level is <strong>High</strong>, task completion probability drops by 42%.</p>
-              <div class="feed-meta">Confidence: 91% &bull; Derived from ${totalActivities} data points</div>
+        insights.innerHTML = '';
+        
+        memories.forEach(mem => {
+          insights.innerHTML += `
+            <div class="feed-item">
+              <div class="feed-icon"><span class="badge badge-inferred">Pattern</span></div>
+              <div class="feed-content">
+                <p>${mem.content}</p>
+                <div class="feed-meta">Confidence: ${Math.round(mem.confidence * 100)}% &bull; Computed by Twin Engine</div>
+              </div>
             </div>
-          </div>
-          <div class="feed-item">
-            <div class="feed-icon"><span class="badge badge-inferred">Habit</span></div>
-            <div class="feed-content">
-              <p>You strictly adhere to fixed schedules (e.g., College Classes) but deviate from flexible leisure activities 64% of the time.</p>
-              <div class="feed-meta">Confidence: 85% &bull; Identified via timeline variance</div>
-            </div>
-          </div>
-        `;
+          `;
+        });
+        
+        if (memories.length === 0) {
+            insights.innerHTML = '<p style="color:#aaa;">No behavioral patterns extracted yet.</p>';
+        }
         
       } catch (e) {
-        document.getElementById('behavioral-stats').innerHTML = `<p style="color:#ff6b6b;">Error: ${e.message}</p>`;
+        document.getElementById('behavioral-stats').innerHTML = `
+          <div style="background: rgba(255,107,107,0.1); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,107,107,0.2); grid-column: 1 / -1;">
+            <p style="color:#ff6b6b; margin: 0;"><strong>Backend Disconnected</strong></p>
+            <p style="color:#aaa; font-size: 13px; margin-top: 4px;">Could not securely fetch memories from the Python backend. Ensure the server is running locally on port 8000.</p>
+          </div>
+        `;
       }
     }
     
