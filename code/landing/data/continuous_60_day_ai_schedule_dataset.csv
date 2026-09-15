@@ -1,0 +1,664 @@
+date,day_of_week,time_start,time_end,duration_min,activity,category,is_fixed_schedule,class_hours,travel_minutes_today,academic_workload_before_slot_min,energy_level_1_5,distraction_level,priority,continuous_free_time_min,can_complete_task,best_time_for_task,task_completed
+2026-09-01,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,145,228,,,,45,,,
+2026-09-01,Tuesday,07:15,09:00,105,Travel / Free Time,Travel,1,3.0,145,228,,,,105,,,
+2026-09-01,Tuesday,09:00,12:00,180,College Classes,Academic,1,3.0,145,228,,,,180,,,
+2026-09-01,Tuesday,12:00,12:40,40,Travel / Commute,Travel,1,3.0,145,228,,,,40,,,
+2026-09-01,Tuesday,12:40,13:30,50,Free / Break,Break,1,3.0,145,228,,,,50,,,
+2026-09-01,Tuesday,13:30,14:15,45,Lunch,Routine,1,3.0,145,228,,,,45,,,
+2026-09-01,Tuesday,14:15,16:36,141,Project Work,Academic,0,3.0,145,228,4,Medium,Medium,141,1,14:15,0
+2026-09-01,Tuesday,16:36,19:09,153,Gaming,Leisure,0,3.0,145,228,4,Low,Medium,153,1,16:36,1
+2026-09-01,Tuesday,19:09,19:24,15,Break / Phone,Break,0,3.0,145,228,,,,15,,,
+2026-09-01,Tuesday,19:24,20:51,87,DBMS Study,Academic,0,3.0,145,228,5,Low,Medium,87,1,19:24,1
+2026-09-01,Tuesday,20:51,23:30,159,Dinner / Relaxation / Personal Time,Routine,1,3.0,145,228,,,,159,,,
+2026-09-02,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,145,282,,,,45,,,
+2026-09-02,Wednesday,07:15,09:00,105,Travel / Free Time,Travel,1,5.0,145,282,,,,105,,,
+2026-09-02,Wednesday,09:00,14:00,300,College Classes,Academic,1,5.0,145,282,,,,300,,,
+2026-09-02,Wednesday,14:00,14:40,40,Travel / Commute,Travel,1,5.0,145,282,,,,40,,,
+2026-09-02,Wednesday,14:40,15:25,45,Lunch,Routine,1,5.0,145,282,,,,45,,,
+2026-09-02,Wednesday,15:25,17:55,150,Project Work,Academic,0,5.0,145,282,3,Medium,High,150,1,15:25,1
+2026-09-02,Wednesday,17:55,18:53,58,Reading,Personal,0,5.0,145,282,4,Medium,Medium,58,1,17:55,1
+2026-09-02,Wednesday,18:53,19:38,45,Break / Phone,Break,0,5.0,145,282,,,,45,,,
+2026-09-02,Wednesday,19:38,21:20,102,OS Study,Academic,0,5.0,145,282,4,Low,Medium,102,1,19:38,1
+2026-09-02,Wednesday,21:20,23:25,125,Video Editing,Content,0,5.0,145,282,5,Medium,Medium,125,1,21:20,1
+2026-09-02,Wednesday,23:25,23:55,30,Revision,Academic,0,5.0,145,282,4,Medium,Medium,30,1,23:25,1
+2026-09-03,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,155,85,,,,45,,,
+2026-09-03,Thursday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,155,85,,,,105,,,
+2026-09-03,Thursday,09:00,13:00,240,College Classes,Academic,1,4.0,155,85,,,,240,,,
+2026-09-03,Thursday,13:00,13:50,50,Travel / Commute,Travel,1,4.0,155,85,,,,50,,,
+2026-09-03,Thursday,13:50,14:35,45,Lunch,Routine,1,4.0,155,85,,,,45,,,
+2026-09-03,Thursday,14:35,16:00,85,DBMS Study,Academic,0,4.0,155,85,5,High,Low,85,0,No,0
+2026-09-03,Thursday,16:00,17:55,115,Gaming,Leisure,0,4.0,155,85,5,Medium,Medium,115,1,16:00,1
+2026-09-03,Thursday,17:55,18:10,15,Break / Phone,Break,0,4.0,155,85,,,,15,,,
+2026-09-03,Thursday,18:10,19:18,68,Coding Practice,Skill,0,4.0,155,85,4,Low,Medium,68,1,18:10,1
+2026-09-03,Thursday,19:18,23:30,252,Dinner / Relaxation / Personal Time,Routine,1,4.0,155,85,,,,252,,,
+2026-09-04,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,125,117,,,,45,,,
+2026-09-04,Friday,07:15,09:00,105,Travel / Free Time,Travel,1,3.0,125,117,,,,105,,,
+2026-09-04,Friday,09:00,12:00,180,College Classes,Academic,1,3.0,125,117,,,,180,,,
+2026-09-04,Friday,12:00,12:20,20,Travel / Commute,Travel,1,3.0,125,117,,,,20,,,
+2026-09-04,Friday,12:20,13:00,40,Free / Break,Break,1,3.0,125,117,,,,40,,,
+2026-09-04,Friday,13:00,13:45,45,Lunch,Routine,1,3.0,125,117,,,,45,,,
+2026-09-04,Friday,13:45,14:15,30,Revision,Academic,0,3.0,125,117,5,Medium,Medium,30,1,13:45,1
+2026-09-04,Friday,14:15,15:21,66,Exercise,Personal,0,3.0,125,117,3,Low,Low,66,1,14:15,1
+2026-09-04,Friday,15:21,15:36,15,Break / Phone,Break,0,3.0,125,117,,,,15,,,
+2026-09-04,Friday,15:36,17:03,87,Python Practice,Academic,0,3.0,125,117,4,Low,Medium,87,1,15:36,1
+2026-09-04,Friday,17:03,23:30,387,Dinner / Relaxation / Personal Time,Routine,1,3.0,125,117,,,,387,,,
+2026-09-05,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,300,,,,45,,,
+2026-09-05,Saturday,07:15,13:15,360,Free / Break,Break,1,0.0,0,300,,,,360,,,
+2026-09-05,Saturday,13:15,14:00,45,Lunch,Routine,1,0.0,0,300,,,,45,,,
+2026-09-05,Saturday,14:00,16:21,141,Project Work,Academic,0,0.0,0,300,4,Low,Medium,141,1,14:00,1
+2026-09-05,Saturday,16:21,18:15,114,DSA Assignment,Academic,0,0.0,0,300,4,Low,Medium,114,1,16:21,1
+2026-09-05,Saturday,18:15,18:45,30,Break / Phone,Break,0,0.0,0,300,,,,30,,,
+2026-09-05,Saturday,18:45,19:30,45,Revision,Academic,0,0.0,0,300,4,Medium,High,45,1,18:45,0
+2026-09-05,Saturday,19:30,21:10,100,Coding Practice,Skill,0,0.0,0,300,5,Medium,High,100,1,19:30,1
+2026-09-05,Saturday,21:10,23:30,140,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,300,,,,140,,,
+2026-09-06,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,290,,,,45,,,
+2026-09-06,Sunday,07:15,13:30,375,Free / Break,Break,1,0.0,0,290,,,,375,,,
+2026-09-06,Sunday,13:30,14:15,45,Lunch,Routine,1,0.0,0,290,,,,45,,,
+2026-09-06,Sunday,14:15,16:56,161,Project Work,Academic,0,0.0,0,290,4,Medium,High,161,1,14:15,0
+2026-09-06,Sunday,16:56,17:49,53,Revision,Academic,0,0.0,0,290,4,High,High,53,0,No,0
+2026-09-06,Sunday,17:49,18:19,30,Break / Phone,Break,0,0.0,0,290,,,,30,,,
+2026-09-06,Sunday,18:19,19:35,76,Python Practice,Academic,0,0.0,0,290,4,Medium,Low,76,1,18:19,1
+2026-09-06,Sunday,19:35,22:26,171,Gaming,Leisure,0,0.0,0,290,3,Medium,Medium,171,1,19:35,1
+2026-09-06,Sunday,22:26,23:30,64,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,290,,,,64,,,
+2026-09-07,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,125,152,,,,45,,,
+2026-09-07,Monday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,125,152,,,,105,,,
+2026-09-07,Monday,09:00,13:00,240,College Classes,Academic,1,4.0,125,152,,,,240,,,
+2026-09-07,Monday,13:00,13:20,20,Travel / Commute,Travel,1,4.0,125,152,,,,20,,,
+2026-09-07,Monday,13:20,13:30,10,Free / Break,Break,1,4.0,125,152,,,,10,,,
+2026-09-07,Monday,13:30,14:15,45,Lunch,Routine,1,4.0,125,152,,,,45,,,
+2026-09-07,Monday,14:15,15:11,56,Exercise,Personal,0,4.0,125,152,4,Medium,Medium,56,1,14:15,1
+2026-09-07,Monday,15:11,17:44,153,Video Editing,Content,0,4.0,125,152,4,Low,Medium,153,1,15:11,1
+2026-09-07,Monday,17:44,18:29,45,Break / Phone,Break,0,4.0,125,152,,,,45,,,
+2026-09-07,Monday,18:29,21:01,152,Project Work,Academic,0,4.0,125,152,4,Low,Medium,152,1,18:29,1
+2026-09-07,Monday,21:01,21:31,30,Reading,Personal,0,4.0,125,152,4,Low,High,30,1,21:01,1
+2026-09-07,Monday,21:31,23:30,119,Dinner / Relaxation / Personal Time,Routine,1,4.0,125,152,,,,119,,,
+2026-09-08,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,125,148,,,,45,,,
+2026-09-08,Tuesday,07:15,09:00,105,Travel / Free Time,Travel,1,5.0,125,148,,,,105,,,
+2026-09-08,Tuesday,09:00,14:00,300,College Classes,Academic,1,5.0,125,148,,,,300,,,
+2026-09-08,Tuesday,14:00,14:20,20,Travel / Commute,Travel,1,5.0,125,148,,,,20,,,
+2026-09-08,Tuesday,14:20,15:05,45,Lunch,Routine,1,5.0,125,148,,,,45,,,
+2026-09-08,Tuesday,15:05,17:31,146,Gaming,Leisure,0,5.0,125,148,5,Low,Medium,146,1,15:05,1
+2026-09-08,Tuesday,17:31,18:15,44,Reading,Personal,0,5.0,125,148,5,Low,Low,44,1,17:31,1
+2026-09-08,Tuesday,18:15,19:00,45,Break / Phone,Break,0,5.0,125,148,,,,45,,,
+2026-09-08,Tuesday,19:00,20:18,78,YouTube Recording,Content,0,5.0,125,148,4,Medium,High,78,1,19:00,1
+2026-09-08,Tuesday,20:18,22:46,148,Project Work,Academic,0,5.0,125,148,4,Low,High,148,1,20:18,1
+2026-09-08,Tuesday,22:46,23:30,44,Dinner / Relaxation / Personal Time,Routine,1,5.0,125,148,,,,44,,,
+2026-09-09,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,125,388,,,,45,,,
+2026-09-09,Wednesday,07:15,08:30,75,Travel / Free Time,Travel,1,5.0,125,388,,,,75,,,
+2026-09-09,Wednesday,08:30,13:30,300,College Classes,Academic,1,5.0,125,388,,,,300,,,
+2026-09-09,Wednesday,13:30,14:20,50,Travel / Commute,Travel,1,5.0,125,388,,,,50,,,
+2026-09-09,Wednesday,14:20,15:05,45,Lunch,Routine,1,5.0,125,388,,,,45,,,
+2026-09-09,Wednesday,15:05,17:12,127,DBMS Study,Academic,0,5.0,125,388,4,Low,Medium,127,1,15:05,1
+2026-09-09,Wednesday,17:12,19:04,112,Python Practice,Academic,0,5.0,125,388,3,Medium,Low,112,1,17:12,1
+2026-09-09,Wednesday,19:04,19:19,15,Break / Phone,Break,0,5.0,125,388,,,,15,,,
+2026-09-09,Wednesday,19:19,21:48,149,OS Study,Academic,0,5.0,125,388,5,High,Medium,149,0,No,0
+2026-09-09,Wednesday,21:48,23:30,102,Gaming,Leisure,0,5.0,125,388,4,High,Medium,102,0,No,0
+2026-09-10,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,145,283,,,,45,,,
+2026-09-10,Thursday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,145,283,,,,105,,,
+2026-09-10,Thursday,09:00,13:00,240,College Classes,Academic,1,4.0,145,283,,,,240,,,
+2026-09-10,Thursday,13:00,13:40,40,Travel / Commute,Travel,1,4.0,145,283,,,,40,,,
+2026-09-10,Thursday,13:40,14:25,45,Lunch,Routine,1,4.0,145,283,,,,45,,,
+2026-09-10,Thursday,14:25,15:26,61,YouTube Recording,Content,0,4.0,145,283,5,Low,Low,61,1,14:25,0
+2026-09-10,Thursday,15:26,17:04,98,Gaming,Leisure,0,4.0,145,283,4,High,Medium,98,0,No,0
+2026-09-10,Thursday,17:04,17:19,15,Break / Phone,Break,0,4.0,145,283,,,,15,,,
+2026-09-10,Thursday,17:19,17:49,30,Reading,Personal,0,4.0,145,283,4,Medium,Medium,30,1,17:19,1
+2026-09-10,Thursday,17:49,20:45,176,Project Work,Academic,0,4.0,145,283,4,Medium,High,176,1,17:49,1
+2026-09-10,Thursday,20:45,21:15,30,Break / Phone,Break,0,4.0,145,283,,,,30,,,
+2026-09-10,Thursday,21:15,23:02,107,DSA Assignment,Academic,0,4.0,145,283,4,High,Medium,107,0,No,0
+2026-09-10,Thursday,23:02,23:30,28,Dinner / Relaxation / Personal Time,Routine,1,4.0,145,283,,,,28,,,
+2026-09-11,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,95,33,,,,45,,,
+2026-09-11,Friday,07:15,08:00,45,Travel / Free Time,Travel,1,5.0,95,33,,,,45,,,
+2026-09-11,Friday,08:00,13:00,300,College Classes,Academic,1,5.0,95,33,,,,300,,,
+2026-09-11,Friday,13:00,13:50,50,Travel / Commute,Travel,1,5.0,95,33,,,,50,,,
+2026-09-11,Friday,13:50,14:35,45,Lunch,Routine,1,5.0,95,33,,,,45,,,
+2026-09-11,Friday,14:35,15:18,43,Reading,Personal,0,5.0,95,33,3,Low,Medium,43,1,14:35,1
+2026-09-11,Friday,15:18,16:58,100,Gaming,Leisure,0,5.0,95,33,4,Medium,Medium,100,1,15:18,1
+2026-09-11,Friday,16:58,17:13,15,Break / Phone,Break,0,5.0,95,33,,,,15,,,
+2026-09-11,Friday,17:13,17:46,33,Revision,Academic,0,5.0,95,33,5,Medium,High,33,1,17:13,1
+2026-09-11,Friday,17:46,19:05,79,Exercise,Personal,0,5.0,95,33,5,Medium,Medium,79,1,17:46,0
+2026-09-11,Friday,19:05,23:30,265,Dinner / Relaxation / Personal Time,Routine,1,5.0,95,33,,,,265,,,
+2026-09-12,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,199,,,,45,,,
+2026-09-12,Saturday,07:15,13:30,375,Free / Break,Break,1,0.0,0,199,,,,375,,,
+2026-09-12,Saturday,13:30,14:15,45,Lunch,Routine,1,0.0,0,199,,,,45,,,
+2026-09-12,Saturday,14:15,15:48,93,DBMS Study,Academic,0,0.0,0,199,4,Low,Low,93,1,14:15,1
+2026-09-12,Saturday,15:48,17:34,106,Python Practice,Academic,0,0.0,0,199,4,Low,Low,106,1,15:48,1
+2026-09-12,Saturday,17:34,18:19,45,Break / Phone,Break,0,0.0,0,199,,,,45,,,
+2026-09-12,Saturday,18:19,20:04,105,YouTube Recording,Content,0,0.0,0,199,5,Medium,Medium,105,1,18:19,1
+2026-09-12,Saturday,20:04,23:30,206,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,199,,,,206,,,
+2026-09-13,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,320,,,,45,,,
+2026-09-13,Sunday,07:15,13:30,375,Free / Break,Break,1,0.0,0,320,,,,375,,,
+2026-09-13,Sunday,13:30,14:15,45,Lunch,Routine,1,0.0,0,320,,,,45,,,
+2026-09-13,Sunday,14:15,15:41,86,DBMS Study,Academic,0,0.0,0,320,3,High,Medium,86,0,No,0
+2026-09-13,Sunday,15:41,17:42,121,OS Study,Academic,0,0.0,0,320,4,High,Low,121,0,No,0
+2026-09-13,Sunday,17:42,18:27,45,Break / Phone,Break,0,0.0,0,320,,,,45,,,
+2026-09-13,Sunday,18:27,19:36,69,Coding Practice,Skill,0,0.0,0,320,4,Low,Low,69,1,18:27,0
+2026-09-13,Sunday,19:36,21:29,113,Python Practice,Academic,0,0.0,0,320,5,Low,High,113,1,19:36,1
+2026-09-13,Sunday,21:29,23:30,121,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,320,,,,121,,,
+2026-09-14,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,105,253,,,,45,,,
+2026-09-14,Monday,07:15,08:30,75,Travel / Free Time,Travel,1,3.0,105,253,,,,75,,,
+2026-09-14,Monday,08:30,11:30,180,College Classes,Academic,1,3.0,105,253,,,,180,,,
+2026-09-14,Monday,11:30,12:00,30,Travel / Commute,Travel,1,3.0,105,253,,,,30,,,
+2026-09-14,Monday,12:00,13:15,75,Free / Break,Break,1,3.0,105,253,,,,75,,,
+2026-09-14,Monday,13:15,14:00,45,Lunch,Routine,1,3.0,105,253,,,,45,,,
+2026-09-14,Monday,14:00,16:04,124,DSA Assignment,Academic,0,3.0,105,253,5,Low,Medium,124,1,14:00,0
+2026-09-14,Monday,16:04,18:13,129,Project Work,Academic,0,3.0,105,253,4,Low,Medium,129,1,16:04,1
+2026-09-14,Monday,18:13,18:43,30,Break / Phone,Break,0,3.0,105,253,,,,30,,,
+2026-09-14,Monday,18:43,19:13,30,Exercise,Personal,0,3.0,105,253,4,High,Medium,30,0,No,0
+2026-09-14,Monday,19:13,20:31,78,YouTube Recording,Content,0,3.0,105,253,5,Low,Low,78,1,19:13,1
+2026-09-14,Monday,20:31,23:30,179,Dinner / Relaxation / Personal Time,Routine,1,3.0,105,253,,,,179,,,
+2026-09-15,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,155,240,,,,45,,,
+2026-09-15,Tuesday,07:15,09:00,105,Travel / Free Time,Travel,1,3.0,155,240,,,,105,,,
+2026-09-15,Tuesday,09:00,12:00,180,College Classes,Academic,1,3.0,155,240,,,,180,,,
+2026-09-15,Tuesday,12:00,12:50,50,Travel / Commute,Travel,1,3.0,155,240,,,,50,,,
+2026-09-15,Tuesday,12:50,13:30,40,Free / Break,Break,1,3.0,155,240,,,,40,,,
+2026-09-15,Tuesday,13:30,14:15,45,Lunch,Routine,1,3.0,155,240,,,,45,,,
+2026-09-15,Tuesday,14:15,15:53,98,Python Practice,Academic,0,3.0,155,240,4,Low,Medium,98,1,14:15,1
+2026-09-15,Tuesday,15:53,16:57,64,Revision,Academic,0,3.0,155,240,5,Medium,Low,64,1,15:53,1
+2026-09-15,Tuesday,16:57,17:42,45,Break / Phone,Break,0,3.0,155,240,,,,45,,,
+2026-09-15,Tuesday,17:42,18:56,74,Gaming,Leisure,0,3.0,155,240,4,Medium,Medium,74,1,17:42,1
+2026-09-15,Tuesday,18:56,20:14,78,DBMS Study,Academic,0,3.0,155,240,4,High,Medium,78,0,No,0
+2026-09-15,Tuesday,20:14,23:30,196,Dinner / Relaxation / Personal Time,Routine,1,3.0,155,240,,,,196,,,
+2026-09-16,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,145,355,,,,45,,,
+2026-09-16,Wednesday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,145,355,,,,105,,,
+2026-09-16,Wednesday,09:00,13:00,240,College Classes,Academic,1,4.0,145,355,,,,240,,,
+2026-09-16,Wednesday,13:00,13:40,40,Travel / Commute,Travel,1,4.0,145,355,,,,40,,,
+2026-09-16,Wednesday,13:40,14:25,45,Lunch,Routine,1,4.0,145,355,,,,45,,,
+2026-09-16,Wednesday,14:25,17:03,158,Project Work,Academic,0,4.0,145,355,4,Medium,Low,158,1,14:25,1
+2026-09-16,Wednesday,17:03,18:50,107,Revision,Academic,0,4.0,145,355,5,High,Low,107,0,No,0
+2026-09-16,Wednesday,18:50,19:05,15,Break / Phone,Break,0,4.0,145,355,,,,15,,,
+2026-09-16,Wednesday,19:05,20:35,90,DBMS Study,Academic,0,4.0,145,355,4,Low,Medium,90,1,19:05,1
+2026-09-16,Wednesday,20:35,21:21,46,Exercise,Personal,0,4.0,145,355,5,Medium,High,46,1,20:35,1
+2026-09-16,Wednesday,21:21,23:30,129,Dinner / Relaxation / Personal Time,Routine,1,4.0,145,355,,,,129,,,
+2026-09-17,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,115,242,,,,45,,,
+2026-09-17,Thursday,07:15,08:30,75,Travel / Free Time,Travel,1,2.0,115,242,,,,75,,,
+2026-09-17,Thursday,08:30,10:30,120,College Classes,Academic,1,2.0,115,242,,,,120,,,
+2026-09-17,Thursday,10:30,11:10,40,Travel / Commute,Travel,1,2.0,115,242,,,,40,,,
+2026-09-17,Thursday,11:10,13:30,140,Free / Break,Break,1,2.0,115,242,,,,140,,,
+2026-09-17,Thursday,13:30,14:15,45,Lunch,Routine,1,2.0,115,242,,,,45,,,
+2026-09-17,Thursday,14:15,15:18,63,Revision,Academic,0,2.0,115,242,4,Low,Low,63,1,14:15,1
+2026-09-17,Thursday,15:18,16:53,95,Python Practice,Academic,0,2.0,115,242,4,Medium,Medium,95,1,15:18,1
+2026-09-17,Thursday,16:53,17:08,15,Break / Phone,Break,0,2.0,115,242,,,,15,,,
+2026-09-17,Thursday,17:08,18:52,104,Coding Practice,Skill,0,2.0,115,242,5,Medium,Medium,104,1,17:08,1
+2026-09-17,Thursday,18:52,20:16,84,DSA Assignment,Academic,0,2.0,115,242,5,Medium,Low,84,1,18:52,1
+2026-09-17,Thursday,20:16,23:30,194,Dinner / Relaxation / Personal Time,Routine,1,2.0,115,242,,,,194,,,
+2026-09-18,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,125,92,,,,45,,,
+2026-09-18,Friday,07:15,08:30,75,Travel / Free Time,Travel,1,4.0,125,92,,,,75,,,
+2026-09-18,Friday,08:30,12:30,240,College Classes,Academic,1,4.0,125,92,,,,240,,,
+2026-09-18,Friday,12:30,13:20,50,Travel / Commute,Travel,1,4.0,125,92,,,,50,,,
+2026-09-18,Friday,13:20,14:05,45,Lunch,Routine,1,4.0,125,92,,,,45,,,
+2026-09-18,Friday,14:05,15:07,62,YouTube Recording,Content,0,4.0,125,92,4,Low,High,62,1,14:05,1
+2026-09-18,Friday,15:07,15:44,37,Exercise,Personal,0,4.0,125,92,3,Low,High,37,1,15:07,1
+2026-09-18,Friday,15:44,16:14,30,Break / Phone,Break,0,4.0,125,92,,,,30,,,
+2026-09-18,Friday,16:14,17:46,92,DBMS Study,Academic,0,4.0,125,92,4,High,Medium,92,0,No,0
+2026-09-18,Friday,17:46,23:30,344,Dinner / Relaxation / Personal Time,Routine,1,4.0,125,92,,,,344,,,
+2026-09-19,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,120,,,,45,,,
+2026-09-19,Saturday,07:15,13:00,345,Free / Break,Break,1,0.0,0,120,,,,345,,,
+2026-09-19,Saturday,13:00,13:45,45,Lunch,Routine,1,0.0,0,120,,,,45,,,
+2026-09-19,Saturday,13:45,16:02,137,Video Editing,Content,0,0.0,0,120,5,Medium,Low,137,1,13:45,0
+2026-09-19,Saturday,16:02,18:26,144,Gaming,Leisure,0,0.0,0,120,4,Medium,High,144,1,16:02,1
+2026-09-19,Saturday,18:26,18:56,30,Break / Phone,Break,0,0.0,0,120,,,,30,,,
+2026-09-19,Saturday,18:56,19:54,58,Reading,Personal,0,0.0,0,120,4,Medium,Medium,58,1,18:56,1
+2026-09-19,Saturday,19:54,21:54,120,DSA Assignment,Academic,0,0.0,0,120,5,Low,Low,120,1,19:54,1
+2026-09-19,Saturday,21:54,23:30,96,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,120,,,,96,,,
+2026-09-20,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,95,,,,45,,,
+2026-09-20,Sunday,07:15,13:15,360,Free / Break,Break,1,0.0,0,95,,,,360,,,
+2026-09-20,Sunday,13:15,14:00,45,Lunch,Routine,1,0.0,0,95,,,,45,,,
+2026-09-20,Sunday,14:00,15:35,95,Lab Preparation,Academic,0,0.0,0,95,4,Medium,Low,95,1,14:00,1
+2026-09-20,Sunday,15:35,18:07,152,Gaming,Leisure,0,0.0,0,95,4,Medium,Medium,152,1,15:35,1
+2026-09-20,Sunday,18:07,18:52,45,Break / Phone,Break,0,0.0,0,95,,,,45,,,
+2026-09-20,Sunday,18:52,20:54,122,Coding Practice,Skill,0,0.0,0,95,5,Low,Medium,122,1,18:52,1
+2026-09-20,Sunday,20:54,22:31,97,Video Editing,Content,0,0.0,0,95,3,Low,Medium,97,1,20:54,0
+2026-09-20,Sunday,22:31,23:30,59,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,95,,,,59,,,
+2026-09-21,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,95,459,,,,45,,,
+2026-09-21,Monday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,95,459,,,,45,,,
+2026-09-21,Monday,08:00,10:00,120,College Classes,Academic,1,2.0,95,459,,,,120,,,
+2026-09-21,Monday,10:00,10:50,50,Travel / Commute,Travel,1,2.0,95,459,,,,50,,,
+2026-09-21,Monday,10:50,13:30,160,Free / Break,Break,1,2.0,95,459,,,,160,,,
+2026-09-21,Monday,13:30,14:15,45,Lunch,Routine,1,2.0,95,459,,,,45,,,
+2026-09-21,Monday,14:15,16:41,146,Project Work,Academic,0,2.0,95,459,5,High,High,146,0,No,0
+2026-09-21,Monday,16:41,18:25,104,Python Practice,Academic,0,2.0,95,459,5,Low,High,104,1,16:41,1
+2026-09-21,Monday,18:25,18:40,15,Break / Phone,Break,0,2.0,95,459,,,,15,,,
+2026-09-21,Monday,18:40,20:29,109,DBMS Study,Academic,0,2.0,95,459,4,High,Medium,109,0,No,0
+2026-09-21,Monday,20:29,22:09,100,OS Study,Academic,0,2.0,95,459,4,Medium,High,100,1,20:29,1
+2026-09-21,Monday,22:09,23:30,81,YouTube Recording,Content,0,2.0,95,459,4,Low,Medium,81,1,22:09,1
+2026-09-22,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,95,175,,,,45,,,
+2026-09-22,Tuesday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,95,175,,,,45,,,
+2026-09-22,Tuesday,08:00,10:00,120,College Classes,Academic,1,2.0,95,175,,,,120,,,
+2026-09-22,Tuesday,10:00,10:50,50,Travel / Commute,Travel,1,2.0,95,175,,,,50,,,
+2026-09-22,Tuesday,10:50,13:30,160,Free / Break,Break,1,2.0,95,175,,,,160,,,
+2026-09-22,Tuesday,13:30,14:15,45,Lunch,Routine,1,2.0,95,175,,,,45,,,
+2026-09-22,Tuesday,14:15,15:23,68,Reading,Personal,0,2.0,95,175,4,Medium,High,68,1,14:15,1
+2026-09-22,Tuesday,15:23,17:20,117,OS Study,Academic,0,2.0,95,175,3,Medium,Low,117,1,15:23,1
+2026-09-22,Tuesday,17:20,18:05,45,Break / Phone,Break,0,2.0,95,175,,,,45,,,
+2026-09-22,Tuesday,18:05,19:03,58,Revision,Academic,0,2.0,95,175,5,High,Medium,58,0,No,0
+2026-09-22,Tuesday,19:03,20:47,104,Video Editing,Content,0,2.0,95,175,4,Low,Medium,104,1,19:03,1
+2026-09-22,Tuesday,20:47,23:30,163,Dinner / Relaxation / Personal Time,Routine,1,2.0,95,175,,,,163,,,
+2026-09-23,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,75,195,,,,45,,,
+2026-09-23,Wednesday,07:15,08:00,45,Travel / Free Time,Travel,1,4.0,75,195,,,,45,,,
+2026-09-23,Wednesday,08:00,12:00,240,College Classes,Academic,1,4.0,75,195,,,,240,,,
+2026-09-23,Wednesday,12:00,12:30,30,Travel / Commute,Travel,1,4.0,75,195,,,,30,,,
+2026-09-23,Wednesday,12:30,13:00,30,Free / Break,Break,1,4.0,75,195,,,,30,,,
+2026-09-23,Wednesday,13:00,13:45,45,Lunch,Routine,1,4.0,75,195,,,,45,,,
+2026-09-23,Wednesday,13:45,14:47,62,Lab Preparation,Academic,0,4.0,75,195,4,Medium,High,62,1,13:45,1
+2026-09-23,Wednesday,14:47,15:32,45,Exercise,Personal,0,4.0,75,195,3,Medium,High,45,1,14:47,0
+2026-09-23,Wednesday,15:32,16:02,30,Break / Phone,Break,0,4.0,75,195,,,,30,,,
+2026-09-23,Wednesday,16:02,18:23,141,Gaming,Leisure,0,4.0,75,195,5,Low,Medium,141,1,16:02,1
+2026-09-23,Wednesday,18:23,19:41,78,DBMS Study,Academic,0,4.0,75,195,5,Medium,Low,78,1,18:23,1
+2026-09-23,Wednesday,19:41,19:56,15,Break / Phone,Break,0,4.0,75,195,,,,15,,,
+2026-09-23,Wednesday,19:56,20:51,55,Python Practice,Academic,0,4.0,75,195,5,Medium,Low,55,1,19:56,1
+2026-09-23,Wednesday,20:51,23:30,159,Dinner / Relaxation / Personal Time,Routine,1,4.0,75,195,,,,159,,,
+2026-09-24,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,65,209,,,,45,,,
+2026-09-24,Thursday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,65,209,,,,45,,,
+2026-09-24,Thursday,08:00,10:00,120,College Classes,Academic,1,2.0,65,209,,,,120,,,
+2026-09-24,Thursday,10:00,10:20,20,Travel / Commute,Travel,1,2.0,65,209,,,,20,,,
+2026-09-24,Thursday,10:20,13:30,190,Free / Break,Break,1,2.0,65,209,,,,190,,,
+2026-09-24,Thursday,13:30,14:15,45,Lunch,Routine,1,2.0,65,209,,,,45,,,
+2026-09-24,Thursday,14:15,16:14,119,Python Practice,Academic,0,2.0,65,209,4,Low,High,119,1,14:15,1
+2026-09-24,Thursday,16:14,17:00,46,Reading,Personal,0,2.0,65,209,4,High,Medium,46,0,No,0
+2026-09-24,Thursday,17:00,17:30,30,Break / Phone,Break,0,2.0,65,209,,,,30,,,
+2026-09-24,Thursday,17:30,19:00,90,DSA Assignment,Academic,0,2.0,65,209,5,Low,Low,90,1,17:30,0
+2026-09-24,Thursday,19:00,23:30,270,Dinner / Relaxation / Personal Time,Routine,1,2.0,65,209,,,,270,,,
+2026-09-25,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,125,157,,,,45,,,
+2026-09-25,Friday,07:15,08:30,75,Travel / Free Time,Travel,1,3.0,125,157,,,,75,,,
+2026-09-25,Friday,08:30,11:30,180,College Classes,Academic,1,3.0,125,157,,,,180,,,
+2026-09-25,Friday,11:30,12:20,50,Travel / Commute,Travel,1,3.0,125,157,,,,50,,,
+2026-09-25,Friday,12:20,13:30,70,Free / Break,Break,1,3.0,125,157,,,,70,,,
+2026-09-25,Friday,13:30,14:15,45,Lunch,Routine,1,3.0,125,157,,,,45,,,
+2026-09-25,Friday,14:15,16:03,108,DSA Assignment,Academic,0,3.0,125,157,3,Low,Medium,108,1,14:15,1
+2026-09-25,Friday,16:03,17:21,78,Reading,Personal,0,3.0,125,157,3,Low,High,78,1,16:03,1
+2026-09-25,Friday,17:21,17:51,30,Break / Phone,Break,0,3.0,125,157,,,,30,,,
+2026-09-25,Friday,17:51,19:36,105,Video Editing,Content,0,3.0,125,157,3,High,Medium,105,0,No,0
+2026-09-25,Friday,19:36,20:25,49,Lab Preparation,Academic,0,3.0,125,157,5,Medium,Medium,49,1,19:36,1
+2026-09-25,Friday,20:25,23:30,185,Dinner / Relaxation / Personal Time,Routine,1,3.0,125,157,,,,185,,,
+2026-09-26,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,246,,,,45,,,
+2026-09-26,Saturday,07:15,13:30,375,Free / Break,Break,1,0.0,0,246,,,,375,,,
+2026-09-26,Saturday,13:30,14:15,45,Lunch,Routine,1,0.0,0,246,,,,45,,,
+2026-09-26,Saturday,14:15,14:49,34,Revision,Academic,0,0.0,0,246,4,High,Low,34,0,No,0
+2026-09-26,Saturday,14:49,16:01,72,Reading,Personal,0,0.0,0,246,4,Medium,Medium,72,1,14:49,1
+2026-09-26,Saturday,16:01,16:46,45,Break / Phone,Break,0,0.0,0,246,,,,45,,,
+2026-09-26,Saturday,16:46,19:18,152,OS Study,Academic,0,0.0,0,246,5,Low,High,152,1,16:46,1
+2026-09-26,Saturday,19:18,21:10,112,Video Editing,Content,0,0.0,0,246,5,Low,High,112,1,19:18,1
+2026-09-26,Saturday,21:10,21:55,45,Break / Phone,Break,0,0.0,0,246,,,,45,,,
+2026-09-26,Saturday,21:55,22:55,60,DBMS Study,Academic,0,0.0,0,246,3,Medium,Low,60,1,21:55,1
+2026-09-26,Saturday,22:55,23:30,35,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,246,,,,35,,,
+2026-09-27,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,106,,,,45,,,
+2026-09-27,Sunday,07:15,13:00,345,Free / Break,Break,1,0.0,0,106,,,,345,,,
+2026-09-27,Sunday,13:00,13:45,45,Lunch,Routine,1,0.0,0,106,,,,45,,,
+2026-09-27,Sunday,13:45,14:15,30,Exercise,Personal,0,0.0,0,106,3,Medium,Low,30,1,13:45,1
+2026-09-27,Sunday,14:15,15:38,83,YouTube Recording,Content,0,0.0,0,106,3,Low,Medium,83,1,14:15,1
+2026-09-27,Sunday,15:38,16:08,30,Break / Phone,Break,0,0.0,0,106,,,,30,,,
+2026-09-27,Sunday,16:08,17:54,106,DBMS Study,Academic,0,0.0,0,106,4,Low,Medium,106,1,16:08,1
+2026-09-27,Sunday,17:54,18:24,30,Reading,Personal,0,0.0,0,106,5,Low,Medium,30,1,17:54,1
+2026-09-27,Sunday,18:24,18:39,15,Break / Phone,Break,0,0.0,0,106,,,,15,,,
+2026-09-27,Sunday,18:39,19:58,79,Coding Practice,Skill,0,0.0,0,106,5,Medium,High,79,1,18:39,1
+2026-09-27,Sunday,19:58,23:30,212,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,106,,,,212,,,
+2026-09-28,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,145,271,,,,45,,,
+2026-09-28,Monday,07:15,09:00,105,Travel / Free Time,Travel,1,5.0,145,271,,,,105,,,
+2026-09-28,Monday,09:00,14:00,300,College Classes,Academic,1,5.0,145,271,,,,300,,,
+2026-09-28,Monday,14:00,14:40,40,Travel / Commute,Travel,1,5.0,145,271,,,,40,,,
+2026-09-28,Monday,14:40,15:25,45,Lunch,Routine,1,5.0,145,271,,,,45,,,
+2026-09-28,Monday,15:25,17:05,100,OS Study,Academic,0,5.0,145,271,4,High,Low,100,0,No,0
+2026-09-28,Monday,17:05,19:16,131,Gaming,Leisure,0,5.0,145,271,5,Medium,High,131,1,17:05,1
+2026-09-28,Monday,19:16,19:31,15,Break / Phone,Break,0,5.0,145,271,,,,15,,,
+2026-09-28,Monday,19:31,21:06,95,DSA Assignment,Academic,0,5.0,145,271,5,High,High,95,0,No,0
+2026-09-28,Monday,21:06,22:22,76,Python Practice,Academic,0,5.0,145,271,5,Medium,Medium,76,1,21:06,1
+2026-09-28,Monday,22:22,23:30,68,Dinner / Relaxation / Personal Time,Routine,1,5.0,145,271,,,,68,,,
+2026-09-29,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,75,237,,,,45,,,
+2026-09-29,Tuesday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,75,237,,,,45,,,
+2026-09-29,Tuesday,08:00,10:00,120,College Classes,Academic,1,2.0,75,237,,,,120,,,
+2026-09-29,Tuesday,10:00,10:30,30,Travel / Commute,Travel,1,2.0,75,237,,,,30,,,
+2026-09-29,Tuesday,10:30,13:30,180,Free / Break,Break,1,2.0,75,237,,,,180,,,
+2026-09-29,Tuesday,13:30,14:15,45,Lunch,Routine,1,2.0,75,237,,,,45,,,
+2026-09-29,Tuesday,14:15,15:39,84,Coding Practice,Skill,0,2.0,75,237,4,Medium,High,84,1,14:15,1
+2026-09-29,Tuesday,15:39,18:08,149,Project Work,Academic,0,2.0,75,237,4,Medium,Medium,149,1,15:39,1
+2026-09-29,Tuesday,18:08,18:38,30,Break / Phone,Break,0,2.0,75,237,,,,30,,,
+2026-09-29,Tuesday,18:38,20:06,88,Python Practice,Academic,0,2.0,75,237,5,High,Medium,88,0,No,0
+2026-09-29,Tuesday,20:06,20:47,41,Reading,Personal,0,2.0,75,237,3,Low,Low,41,1,20:06,1
+2026-09-29,Tuesday,20:47,23:30,163,Dinner / Relaxation / Personal Time,Routine,1,2.0,75,237,,,,163,,,
+2026-09-30,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,65,30,,,,45,,,
+2026-09-30,Wednesday,07:15,08:00,45,Travel / Free Time,Travel,1,3.0,65,30,,,,45,,,
+2026-09-30,Wednesday,08:00,11:00,180,College Classes,Academic,1,3.0,65,30,,,,180,,,
+2026-09-30,Wednesday,11:00,11:20,20,Travel / Commute,Travel,1,3.0,65,30,,,,20,,,
+2026-09-30,Wednesday,11:20,13:00,100,Free / Break,Break,1,3.0,65,30,,,,100,,,
+2026-09-30,Wednesday,13:00,13:45,45,Lunch,Routine,1,3.0,65,30,,,,45,,,
+2026-09-30,Wednesday,13:45,15:41,116,Gaming,Leisure,0,3.0,65,30,3,High,Low,116,0,No,0
+2026-09-30,Wednesday,15:41,16:11,30,Lab Preparation,Academic,0,3.0,65,30,5,High,Low,30,0,No,0
+2026-09-30,Wednesday,16:11,16:41,30,Break / Phone,Break,0,3.0,65,30,,,,30,,,
+2026-09-30,Wednesday,16:41,17:58,77,YouTube Recording,Content,0,3.0,65,30,4,Low,Low,77,1,16:41,1
+2026-09-30,Wednesday,17:58,23:30,332,Dinner / Relaxation / Personal Time,Routine,1,3.0,65,30,,,,332,,,
+2026-10-01,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,115,243,,,,45,,,
+2026-10-01,Thursday,07:15,08:30,75,Travel / Free Time,Travel,1,4.0,115,243,,,,75,,,
+2026-10-01,Thursday,08:30,12:30,240,College Classes,Academic,1,4.0,115,243,,,,240,,,
+2026-10-01,Thursday,12:30,13:10,40,Travel / Commute,Travel,1,4.0,115,243,,,,40,,,
+2026-10-01,Thursday,13:10,13:30,20,Free / Break,Break,1,4.0,115,243,,,,20,,,
+2026-10-01,Thursday,13:30,14:15,45,Lunch,Routine,1,4.0,115,243,,,,45,,,
+2026-10-01,Thursday,14:15,14:46,31,Revision,Academic,0,4.0,115,243,3,Medium,Medium,31,1,14:15,0
+2026-10-01,Thursday,14:46,15:59,73,Coding Practice,Skill,0,4.0,115,243,5,Low,Low,73,1,14:46,1
+2026-10-01,Thursday,15:59,16:29,30,Break / Phone,Break,0,4.0,115,243,,,,30,,,
+2026-10-01,Thursday,16:29,17:21,52,DBMS Study,Academic,0,4.0,115,243,5,Medium,Low,52,1,16:29,1
+2026-10-01,Thursday,17:21,20:01,160,Project Work,Academic,0,4.0,115,243,4,Medium,Medium,160,1,17:21,0
+2026-10-01,Thursday,20:01,23:30,209,Dinner / Relaxation / Personal Time,Routine,1,4.0,115,243,,,,209,,,
+2026-10-02,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,115,223,,,,45,,,
+2026-10-02,Friday,07:15,08:30,75,Travel / Free Time,Travel,1,3.0,115,223,,,,75,,,
+2026-10-02,Friday,08:30,11:30,180,College Classes,Academic,1,3.0,115,223,,,,180,,,
+2026-10-02,Friday,11:30,12:10,40,Travel / Commute,Travel,1,3.0,115,223,,,,40,,,
+2026-10-02,Friday,12:10,13:00,50,Free / Break,Break,1,3.0,115,223,,,,50,,,
+2026-10-02,Friday,13:00,13:45,45,Lunch,Routine,1,3.0,115,223,,,,45,,,
+2026-10-02,Friday,13:45,16:21,156,Project Work,Academic,0,3.0,115,223,3,Medium,High,156,1,13:45,1
+2026-10-02,Friday,16:21,18:11,110,Coding Practice,Skill,0,3.0,115,223,4,Medium,Medium,110,1,16:21,1
+2026-10-02,Friday,18:11,18:41,30,Break / Phone,Break,0,3.0,115,223,,,,30,,,
+2026-10-02,Friday,18:41,19:48,67,Lab Preparation,Academic,0,3.0,115,223,5,High,Low,67,0,No,0
+2026-10-02,Friday,19:48,23:30,222,Dinner / Relaxation / Personal Time,Routine,1,3.0,115,223,,,,222,,,
+2026-10-03,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,389,,,,45,,,
+2026-10-03,Saturday,07:15,13:15,360,Free / Break,Break,1,0.0,0,389,,,,360,,,
+2026-10-03,Saturday,13:15,14:00,45,Lunch,Routine,1,0.0,0,389,,,,45,,,
+2026-10-03,Saturday,14:00,16:52,172,Project Work,Academic,0,0.0,0,389,5,Low,Low,172,1,14:00,0
+2026-10-03,Saturday,16:52,17:22,30,Reading,Personal,0,0.0,0,389,4,Low,Medium,30,1,16:52,1
+2026-10-03,Saturday,17:22,18:07,45,Break / Phone,Break,0,0.0,0,389,,,,45,,,
+2026-10-03,Saturday,18:07,19:35,88,DSA Assignment,Academic,0,0.0,0,389,5,Medium,Low,88,1,18:07,1
+2026-10-03,Saturday,19:35,21:44,129,Lab Preparation,Academic,0,0.0,0,389,5,High,Medium,129,0,No,0
+2026-10-03,Saturday,21:44,23:30,106,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,389,,,,106,,,
+2026-10-04,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,337,,,,45,,,
+2026-10-04,Sunday,07:15,13:00,345,Free / Break,Break,1,0.0,0,337,,,,345,,,
+2026-10-04,Sunday,13:00,13:45,45,Lunch,Routine,1,0.0,0,337,,,,45,,,
+2026-10-04,Sunday,13:45,15:19,94,Lab Preparation,Academic,0,0.0,0,337,5,High,Low,94,0,No,0
+2026-10-04,Sunday,15:19,16:54,95,DSA Assignment,Academic,0,0.0,0,337,4,Low,Medium,95,1,15:19,1
+2026-10-04,Sunday,16:54,17:09,15,Break / Phone,Break,0,0.0,0,337,,,,15,,,
+2026-10-04,Sunday,17:09,18:36,87,Python Practice,Academic,0,0.0,0,337,5,Low,High,87,1,17:09,1
+2026-10-04,Sunday,18:36,19:54,78,Coding Practice,Skill,0,0.0,0,337,5,Medium,High,78,1,18:36,1
+2026-10-04,Sunday,19:54,20:09,15,Break / Phone,Break,0,0.0,0,337,,,,15,,,
+2026-10-04,Sunday,20:09,21:10,61,Revision,Academic,0,0.0,0,337,5,Medium,Medium,61,1,20:09,1
+2026-10-04,Sunday,21:10,23:30,140,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,337,,,,140,,,
+2026-10-05,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,95,260,,,,45,,,
+2026-10-05,Monday,07:15,08:30,75,Travel / Free Time,Travel,1,5.0,95,260,,,,75,,,
+2026-10-05,Monday,08:30,13:30,300,College Classes,Academic,1,5.0,95,260,,,,300,,,
+2026-10-05,Monday,13:30,13:50,20,Travel / Commute,Travel,1,5.0,95,260,,,,20,,,
+2026-10-05,Monday,13:50,14:35,45,Lunch,Routine,1,5.0,95,260,,,,45,,,
+2026-10-05,Monday,14:35,16:01,86,DSA Assignment,Academic,0,5.0,95,260,5,Low,High,86,1,14:35,1
+2026-10-05,Monday,16:01,17:27,86,Lab Preparation,Academic,0,5.0,95,260,4,Medium,High,86,1,16:01,1
+2026-10-05,Monday,17:27,17:57,30,Break / Phone,Break,0,5.0,95,260,,,,30,,,
+2026-10-05,Monday,17:57,19:49,112,Coding Practice,Skill,0,5.0,95,260,4,Low,Medium,112,1,17:57,1
+2026-10-05,Monday,19:49,21:17,88,Python Practice,Academic,0,5.0,95,260,4,Medium,High,88,1,19:49,1
+2026-10-05,Monday,21:17,23:23,126,Gaming,Leisure,0,5.0,95,260,4,Low,High,126,1,21:17,1
+2026-10-05,Monday,23:23,23:30,7,Dinner / Relaxation / Personal Time,Routine,1,5.0,95,260,,,,7,,,
+2026-10-06,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,75,0,,,,45,,,
+2026-10-06,Tuesday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,75,0,,,,45,,,
+2026-10-06,Tuesday,08:00,10:00,120,College Classes,Academic,1,2.0,75,0,,,,120,,,
+2026-10-06,Tuesday,10:00,10:30,30,Travel / Commute,Travel,1,2.0,75,0,,,,30,,,
+2026-10-06,Tuesday,10:30,13:00,150,Free / Break,Break,1,2.0,75,0,,,,150,,,
+2026-10-06,Tuesday,13:00,13:45,45,Lunch,Routine,1,2.0,75,0,,,,45,,,
+2026-10-06,Tuesday,13:45,15:22,97,Gaming,Leisure,0,2.0,75,0,4,Medium,Medium,97,1,13:45,0
+2026-10-06,Tuesday,15:22,17:29,127,Video Editing,Content,0,2.0,75,0,5,Low,Low,127,1,15:22,1
+2026-10-06,Tuesday,17:29,18:14,45,Break / Phone,Break,0,2.0,75,0,,,,45,,,
+2026-10-06,Tuesday,18:14,20:04,110,YouTube Recording,Content,0,2.0,75,0,4,Low,Medium,110,1,18:14,0
+2026-10-06,Tuesday,20:04,20:44,40,Reading,Personal,0,2.0,75,0,4,Low,Medium,40,1,20:04,1
+2026-10-06,Tuesday,20:44,23:30,166,Dinner / Relaxation / Personal Time,Routine,1,2.0,75,0,,,,166,,,
+2026-10-07,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,65,108,,,,45,,,
+2026-10-07,Wednesday,07:15,08:00,45,Travel / Free Time,Travel,1,3.0,65,108,,,,45,,,
+2026-10-07,Wednesday,08:00,11:00,180,College Classes,Academic,1,3.0,65,108,,,,180,,,
+2026-10-07,Wednesday,11:00,11:20,20,Travel / Commute,Travel,1,3.0,65,108,,,,20,,,
+2026-10-07,Wednesday,11:20,13:30,130,Free / Break,Break,1,3.0,65,108,,,,130,,,
+2026-10-07,Wednesday,13:30,14:15,45,Lunch,Routine,1,3.0,65,108,,,,45,,,
+2026-10-07,Wednesday,14:15,15:49,94,Video Editing,Content,0,3.0,65,108,4,Low,High,94,1,14:15,1
+2026-10-07,Wednesday,15:49,17:37,108,DSA Assignment,Academic,0,3.0,65,108,5,Medium,High,108,1,15:49,1
+2026-10-07,Wednesday,17:37,18:07,30,Break / Phone,Break,0,3.0,65,108,,,,30,,,
+2026-10-07,Wednesday,18:07,20:06,119,Gaming,Leisure,0,3.0,65,108,4,Medium,Low,119,1,18:07,1
+2026-10-07,Wednesday,20:06,23:30,204,Dinner / Relaxation / Personal Time,Routine,1,3.0,65,108,,,,204,,,
+2026-10-08,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,75,167,,,,45,,,
+2026-10-08,Thursday,07:15,08:00,45,Travel / Free Time,Travel,1,4.0,75,167,,,,45,,,
+2026-10-08,Thursday,08:00,12:00,240,College Classes,Academic,1,4.0,75,167,,,,240,,,
+2026-10-08,Thursday,12:00,12:30,30,Travel / Commute,Travel,1,4.0,75,167,,,,30,,,
+2026-10-08,Thursday,12:30,13:30,60,Free / Break,Break,1,4.0,75,167,,,,60,,,
+2026-10-08,Thursday,13:30,14:15,45,Lunch,Routine,1,4.0,75,167,,,,45,,,
+2026-10-08,Thursday,14:15,15:07,52,Revision,Academic,0,4.0,75,167,5,Medium,Medium,52,1,14:15,1
+2026-10-08,Thursday,15:07,17:02,115,OS Study,Academic,0,4.0,75,167,5,High,High,115,0,No,0
+2026-10-08,Thursday,17:02,17:32,30,Break / Phone,Break,0,4.0,75,167,,,,30,,,
+2026-10-08,Thursday,17:32,19:41,129,Video Editing,Content,0,4.0,75,167,5,Medium,Medium,129,1,17:32,1
+2026-10-08,Thursday,19:41,21:24,103,YouTube Recording,Content,0,4.0,75,167,4,Low,High,103,1,19:41,1
+2026-10-08,Thursday,21:24,21:54,30,Break / Phone,Break,0,4.0,75,167,,,,30,,,
+2026-10-08,Thursday,21:54,22:32,38,Reading,Personal,0,4.0,75,167,4,Low,Medium,38,1,21:54,1
+2026-10-08,Thursday,22:32,23:30,58,Dinner / Relaxation / Personal Time,Routine,1,4.0,75,167,,,,58,,,
+2026-10-09,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,145,118,,,,45,,,
+2026-10-09,Friday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,145,118,,,,105,,,
+2026-10-09,Friday,09:00,13:00,240,College Classes,Academic,1,4.0,145,118,,,,240,,,
+2026-10-09,Friday,13:00,13:40,40,Travel / Commute,Travel,1,4.0,145,118,,,,40,,,
+2026-10-09,Friday,13:40,14:25,45,Lunch,Routine,1,4.0,145,118,,,,45,,,
+2026-10-09,Friday,14:25,16:18,113,Gaming,Leisure,0,4.0,145,118,4,Medium,Low,113,1,14:25,1
+2026-10-09,Friday,16:18,16:53,35,Reading,Personal,0,4.0,145,118,4,Low,High,35,1,16:18,1
+2026-10-09,Friday,16:53,17:08,15,Break / Phone,Break,0,4.0,145,118,,,,15,,,
+2026-10-09,Friday,17:08,18:18,70,Exercise,Personal,0,4.0,145,118,5,Low,Medium,70,1,17:08,1
+2026-10-09,Friday,18:18,20:16,118,Python Practice,Academic,0,4.0,145,118,5,Low,Medium,118,1,18:18,1
+2026-10-09,Friday,20:16,23:30,194,Dinner / Relaxation / Personal Time,Routine,1,4.0,145,118,,,,194,,,
+2026-10-10,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,302,,,,45,,,
+2026-10-10,Saturday,07:15,13:30,375,Free / Break,Break,1,0.0,0,302,,,,375,,,
+2026-10-10,Saturday,13:30,14:15,45,Lunch,Routine,1,0.0,0,302,,,,45,,,
+2026-10-10,Saturday,14:15,16:10,115,DBMS Study,Academic,0,0.0,0,302,4,Medium,High,115,1,14:15,1
+2026-10-10,Saturday,16:10,16:47,37,Reading,Personal,0,0.0,0,302,5,Medium,High,37,1,16:10,1
+2026-10-10,Saturday,16:47,17:32,45,Break / Phone,Break,0,0.0,0,302,,,,45,,,
+2026-10-10,Saturday,17:32,19:40,128,Video Editing,Content,0,0.0,0,302,4,Medium,Low,128,1,17:32,1
+2026-10-10,Saturday,19:40,20:39,59,DSA Assignment,Academic,0,0.0,0,302,4,Medium,High,59,1,19:40,1
+2026-10-10,Saturday,20:39,20:54,15,Break / Phone,Break,0,0.0,0,302,,,,15,,,
+2026-10-10,Saturday,20:54,23:02,128,OS Study,Academic,0,0.0,0,302,3,Low,Medium,128,1,20:54,1
+2026-10-10,Saturday,23:02,23:30,28,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,302,,,,28,,,
+2026-10-11,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,421,,,,45,,,
+2026-10-11,Sunday,07:15,13:30,375,Free / Break,Break,1,0.0,0,421,,,,375,,,
+2026-10-11,Sunday,13:30,14:15,45,Lunch,Routine,1,0.0,0,421,,,,45,,,
+2026-10-11,Sunday,14:15,15:25,70,Reading,Personal,0,0.0,0,421,5,Medium,Medium,70,1,14:15,1
+2026-10-11,Sunday,15:25,17:15,110,OS Study,Academic,0,0.0,0,421,5,Low,Medium,110,1,15:25,0
+2026-10-11,Sunday,17:15,18:00,45,Break / Phone,Break,0,0.0,0,421,,,,45,,,
+2026-10-11,Sunday,18:00,19:46,106,DSA Assignment,Academic,0,0.0,0,421,4,Low,Low,106,1,18:00,0
+2026-10-11,Sunday,19:46,21:21,95,DBMS Study,Academic,0,0.0,0,421,3,Low,Medium,95,1,19:46,1
+2026-10-11,Sunday,21:21,23:11,110,Lab Preparation,Academic,0,0.0,0,421,4,Medium,High,110,1,21:21,1
+2026-10-11,Sunday,23:11,23:30,19,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,421,,,,19,,,
+2026-10-12,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,115,253,,,,45,,,
+2026-10-12,Monday,07:15,08:30,75,Travel / Free Time,Travel,1,3.0,115,253,,,,75,,,
+2026-10-12,Monday,08:30,11:30,180,College Classes,Academic,1,3.0,115,253,,,,180,,,
+2026-10-12,Monday,11:30,12:10,40,Travel / Commute,Travel,1,3.0,115,253,,,,40,,,
+2026-10-12,Monday,12:10,13:00,50,Free / Break,Break,1,3.0,115,253,,,,50,,,
+2026-10-12,Monday,13:00,13:45,45,Lunch,Routine,1,3.0,115,253,,,,45,,,
+2026-10-12,Monday,13:45,14:46,61,Lab Preparation,Academic,0,3.0,115,253,4,High,High,61,0,No,0
+2026-10-12,Monday,14:46,16:52,126,Gaming,Leisure,0,3.0,115,253,4,Low,Medium,126,1,14:46,0
+2026-10-12,Monday,16:52,17:22,30,Break / Phone,Break,0,3.0,115,253,,,,30,,,
+2026-10-12,Monday,17:22,19:06,104,OS Study,Academic,0,3.0,115,253,5,High,Low,104,0,No,0
+2026-10-12,Monday,19:06,20:34,88,DSA Assignment,Academic,0,3.0,115,253,5,Medium,Medium,88,1,19:06,0
+2026-10-12,Monday,20:34,23:30,176,Dinner / Relaxation / Personal Time,Routine,1,3.0,115,253,,,,176,,,
+2026-10-13,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,125,271,,,,45,,,
+2026-10-13,Tuesday,07:15,08:30,75,Travel / Free Time,Travel,1,2.0,125,271,,,,75,,,
+2026-10-13,Tuesday,08:30,10:30,120,College Classes,Academic,1,2.0,125,271,,,,120,,,
+2026-10-13,Tuesday,10:30,11:20,50,Travel / Commute,Travel,1,2.0,125,271,,,,50,,,
+2026-10-13,Tuesday,11:20,13:15,115,Free / Break,Break,1,2.0,125,271,,,,115,,,
+2026-10-13,Tuesday,13:15,14:00,45,Lunch,Routine,1,2.0,125,271,,,,45,,,
+2026-10-13,Tuesday,14:00,16:36,156,Project Work,Academic,0,2.0,125,271,4,Low,Low,156,1,14:00,1
+2026-10-13,Tuesday,16:36,17:27,51,Reading,Personal,0,2.0,125,271,5,Low,High,51,1,16:36,1
+2026-10-13,Tuesday,17:27,18:12,45,Break / Phone,Break,0,2.0,125,271,,,,45,,,
+2026-10-13,Tuesday,18:12,20:07,115,DBMS Study,Academic,0,2.0,125,271,5,Medium,Low,115,1,18:12,1
+2026-10-13,Tuesday,20:07,22:03,116,Video Editing,Content,0,2.0,125,271,5,Medium,Medium,116,1,20:07,1
+2026-10-13,Tuesday,22:03,23:30,87,Dinner / Relaxation / Personal Time,Routine,1,2.0,125,271,,,,87,,,
+2026-10-14,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,75,224,,,,45,,,
+2026-10-14,Wednesday,07:15,08:00,45,Travel / Free Time,Travel,1,4.0,75,224,,,,45,,,
+2026-10-14,Wednesday,08:00,12:00,240,College Classes,Academic,1,4.0,75,224,,,,240,,,
+2026-10-14,Wednesday,12:00,12:30,30,Travel / Commute,Travel,1,4.0,75,224,,,,30,,,
+2026-10-14,Wednesday,12:30,13:15,45,Free / Break,Break,1,4.0,75,224,,,,45,,,
+2026-10-14,Wednesday,13:15,14:00,45,Lunch,Routine,1,4.0,75,224,,,,45,,,
+2026-10-14,Wednesday,14:00,15:27,87,DSA Assignment,Academic,0,4.0,75,224,4,Low,Medium,87,1,14:00,1
+2026-10-14,Wednesday,15:27,17:44,137,OS Study,Academic,0,4.0,75,224,3,Medium,Medium,137,1,15:27,1
+2026-10-14,Wednesday,17:44,18:29,45,Break / Phone,Break,0,4.0,75,224,,,,45,,,
+2026-10-14,Wednesday,18:29,20:05,96,Coding Practice,Skill,0,4.0,75,224,4,Medium,High,96,1,18:29,1
+2026-10-14,Wednesday,20:05,21:56,111,YouTube Recording,Content,0,4.0,75,224,5,High,Low,111,0,No,0
+2026-10-14,Wednesday,21:56,23:30,94,Dinner / Relaxation / Personal Time,Routine,1,4.0,75,224,,,,94,,,
+2026-10-15,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,125,170,,,,45,,,
+2026-10-15,Thursday,07:15,08:30,75,Travel / Free Time,Travel,1,5.0,125,170,,,,75,,,
+2026-10-15,Thursday,08:30,13:30,300,College Classes,Academic,1,5.0,125,170,,,,300,,,
+2026-10-15,Thursday,13:30,14:20,50,Travel / Commute,Travel,1,5.0,125,170,,,,50,,,
+2026-10-15,Thursday,14:20,15:05,45,Lunch,Routine,1,5.0,125,170,,,,45,,,
+2026-10-15,Thursday,15:05,15:57,52,Reading,Personal,0,5.0,125,170,3,Medium,Low,52,1,15:05,1
+2026-10-15,Thursday,15:57,18:47,170,Project Work,Academic,0,5.0,125,170,5,Low,Medium,170,1,15:57,1
+2026-10-15,Thursday,18:47,19:32,45,Break / Phone,Break,0,5.0,125,170,,,,45,,,
+2026-10-15,Thursday,19:32,20:58,86,Coding Practice,Skill,0,5.0,125,170,3,Low,Medium,86,1,19:32,1
+2026-10-15,Thursday,20:58,23:30,152,Dinner / Relaxation / Personal Time,Routine,1,5.0,125,170,,,,152,,,
+2026-10-16,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,95,161,,,,45,,,
+2026-10-16,Friday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,95,161,,,,45,,,
+2026-10-16,Friday,08:00,10:00,120,College Classes,Academic,1,2.0,95,161,,,,120,,,
+2026-10-16,Friday,10:00,10:50,50,Travel / Commute,Travel,1,2.0,95,161,,,,50,,,
+2026-10-16,Friday,10:50,13:30,160,Free / Break,Break,1,2.0,95,161,,,,160,,,
+2026-10-16,Friday,13:30,14:15,45,Lunch,Routine,1,2.0,95,161,,,,45,,,
+2026-10-16,Friday,14:15,16:03,108,Video Editing,Content,0,2.0,95,161,4,Medium,High,108,1,14:15,1
+2026-10-16,Friday,16:03,16:33,30,Revision,Academic,0,2.0,95,161,4,Low,High,30,1,16:03,1
+2026-10-16,Friday,16:33,17:03,30,Break / Phone,Break,0,2.0,95,161,,,,30,,,
+2026-10-16,Friday,17:03,18:35,92,YouTube Recording,Content,0,2.0,95,161,5,Medium,High,92,1,17:03,1
+2026-10-16,Friday,18:35,20:46,131,Python Practice,Academic,0,2.0,95,161,4,Medium,Low,131,1,18:35,0
+2026-10-16,Friday,20:46,23:30,164,Dinner / Relaxation / Personal Time,Routine,1,2.0,95,161,,,,164,,,
+2026-10-17,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,274,,,,45,,,
+2026-10-17,Saturday,07:15,13:15,360,Free / Break,Break,1,0.0,0,274,,,,360,,,
+2026-10-17,Saturday,13:15,14:00,45,Lunch,Routine,1,0.0,0,274,,,,45,,,
+2026-10-17,Saturday,14:00,15:43,103,DBMS Study,Academic,0,0.0,0,274,4,Medium,Medium,103,1,14:00,1
+2026-10-17,Saturday,15:43,17:08,85,Python Practice,Academic,0,0.0,0,274,4,Low,High,85,1,15:43,0
+2026-10-17,Saturday,17:08,17:38,30,Break / Phone,Break,0,0.0,0,274,,,,30,,,
+2026-10-17,Saturday,17:38,19:40,122,Coding Practice,Skill,0,0.0,0,274,5,Low,Medium,122,1,17:38,0
+2026-10-17,Saturday,19:40,20:38,58,Exercise,Personal,0,0.0,0,274,4,Low,Medium,58,1,19:40,1
+2026-10-17,Saturday,20:38,21:08,30,Break / Phone,Break,0,0.0,0,274,,,,30,,,
+2026-10-17,Saturday,21:08,22:34,86,DSA Assignment,Academic,0,0.0,0,274,4,Low,High,86,1,21:08,1
+2026-10-17,Saturday,22:34,23:30,56,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,274,,,,56,,,
+2026-10-18,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,177,,,,45,,,
+2026-10-18,Sunday,07:15,13:30,375,Free / Break,Break,1,0.0,0,177,,,,375,,,
+2026-10-18,Sunday,13:30,14:15,45,Lunch,Routine,1,0.0,0,177,,,,45,,,
+2026-10-18,Sunday,14:15,16:12,117,YouTube Recording,Content,0,0.0,0,177,4,Low,Medium,117,1,14:15,1
+2026-10-18,Sunday,16:12,17:53,101,Lab Preparation,Academic,0,0.0,0,177,5,Low,Medium,101,1,16:12,1
+2026-10-18,Sunday,17:53,18:38,45,Break / Phone,Break,0,0.0,0,177,,,,45,,,
+2026-10-18,Sunday,18:38,20:56,138,Video Editing,Content,0,0.0,0,177,4,Low,Medium,138,1,18:38,1
+2026-10-18,Sunday,20:56,22:12,76,DBMS Study,Academic,0,0.0,0,177,5,Low,High,76,1,20:56,1
+2026-10-18,Sunday,22:12,23:30,78,Coding Practice,Skill,0,0.0,0,177,4,Low,High,78,1,22:12,1
+2026-10-19,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,115,200,,,,45,,,
+2026-10-19,Monday,07:15,08:30,75,Travel / Free Time,Travel,1,4.0,115,200,,,,75,,,
+2026-10-19,Monday,08:30,12:30,240,College Classes,Academic,1,4.0,115,200,,,,240,,,
+2026-10-19,Monday,12:30,13:10,40,Travel / Commute,Travel,1,4.0,115,200,,,,40,,,
+2026-10-19,Monday,13:10,13:15,5,Free / Break,Break,1,4.0,115,200,,,,5,,,
+2026-10-19,Monday,13:15,14:00,45,Lunch,Routine,1,4.0,115,200,,,,45,,,
+2026-10-19,Monday,14:00,15:26,86,Python Practice,Academic,0,4.0,115,200,4,Low,Low,86,1,14:00,0
+2026-10-19,Monday,15:26,15:56,30,Revision,Academic,0,4.0,115,200,4,Medium,Low,30,1,15:26,1
+2026-10-19,Monday,15:56,16:11,15,Break / Phone,Break,0,4.0,115,200,,,,15,,,
+2026-10-19,Monday,16:11,17:35,84,OS Study,Academic,0,4.0,115,200,4,Medium,Medium,84,1,16:11,0
+2026-10-19,Monday,17:35,23:30,355,Dinner / Relaxation / Personal Time,Routine,1,4.0,115,200,,,,355,,,
+2026-10-20,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,125,97,,,,45,,,
+2026-10-20,Tuesday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,125,97,,,,105,,,
+2026-10-20,Tuesday,09:00,13:00,240,College Classes,Academic,1,4.0,125,97,,,,240,,,
+2026-10-20,Tuesday,13:00,13:20,20,Travel / Commute,Travel,1,4.0,125,97,,,,20,,,
+2026-10-20,Tuesday,13:20,14:05,45,Lunch,Routine,1,4.0,125,97,,,,45,,,
+2026-10-20,Tuesday,14:05,14:59,54,Coding Practice,Skill,0,4.0,125,97,5,Low,Medium,54,1,14:05,1
+2026-10-20,Tuesday,14:59,16:36,97,Lab Preparation,Academic,0,4.0,125,97,4,Medium,High,97,1,14:59,1
+2026-10-20,Tuesday,16:36,17:06,30,Break / Phone,Break,0,4.0,125,97,,,,30,,,
+2026-10-20,Tuesday,17:06,18:23,77,Video Editing,Content,0,4.0,125,97,4,Medium,High,77,1,17:06,1
+2026-10-20,Tuesday,18:23,19:32,69,Reading,Personal,0,4.0,125,97,4,Low,Medium,69,1,18:23,1
+2026-10-20,Tuesday,19:32,23:30,238,Dinner / Relaxation / Personal Time,Routine,1,4.0,125,97,,,,238,,,
+2026-10-21,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,135,395,,,,45,,,
+2026-10-21,Wednesday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,135,395,,,,105,,,
+2026-10-21,Wednesday,09:00,13:00,240,College Classes,Academic,1,4.0,135,395,,,,240,,,
+2026-10-21,Wednesday,13:00,13:30,30,Travel / Commute,Travel,1,4.0,135,395,,,,30,,,
+2026-10-21,Wednesday,13:30,14:15,45,Lunch,Routine,1,4.0,135,395,,,,45,,,
+2026-10-21,Wednesday,14:15,15:42,87,DSA Assignment,Academic,0,4.0,135,395,4,Low,Medium,87,1,14:15,1
+2026-10-21,Wednesday,15:42,17:52,130,Video Editing,Content,0,4.0,135,395,4,Low,Medium,130,1,15:42,1
+2026-10-21,Wednesday,17:52,18:22,30,Break / Phone,Break,0,4.0,135,395,,,,30,,,
+2026-10-21,Wednesday,18:22,20:34,132,Project Work,Academic,0,4.0,135,395,4,Medium,Medium,132,1,18:22,1
+2026-10-21,Wednesday,20:34,22:08,94,Lab Preparation,Academic,0,4.0,135,395,5,Low,High,94,1,20:34,0
+2026-10-21,Wednesday,22:08,23:30,82,OS Study,Academic,0,4.0,135,395,4,High,High,82,0,No,0
+2026-10-22,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,95,172,,,,45,,,
+2026-10-22,Thursday,07:15,08:30,75,Travel / Free Time,Travel,1,2.0,95,172,,,,75,,,
+2026-10-22,Thursday,08:30,10:30,120,College Classes,Academic,1,2.0,95,172,,,,120,,,
+2026-10-22,Thursday,10:30,10:50,20,Travel / Commute,Travel,1,2.0,95,172,,,,20,,,
+2026-10-22,Thursday,10:50,13:15,145,Free / Break,Break,1,2.0,95,172,,,,145,,,
+2026-10-22,Thursday,13:15,14:00,45,Lunch,Routine,1,2.0,95,172,,,,45,,,
+2026-10-22,Thursday,14:00,14:55,55,Exercise,Personal,0,2.0,95,172,4,Low,Medium,55,1,14:00,1
+2026-10-22,Thursday,14:55,15:58,63,YouTube Recording,Content,0,2.0,95,172,4,Medium,Low,63,1,14:55,1
+2026-10-22,Thursday,15:58,16:43,45,Break / Phone,Break,0,2.0,95,172,,,,45,,,
+2026-10-22,Thursday,16:43,19:35,172,Project Work,Academic,0,2.0,95,172,3,Medium,High,172,1,16:43,1
+2026-10-22,Thursday,19:35,23:30,235,Dinner / Relaxation / Personal Time,Routine,1,2.0,95,172,,,,235,,,
+2026-10-23,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,4.0,145,231,,,,45,,,
+2026-10-23,Friday,07:15,09:00,105,Travel / Free Time,Travel,1,4.0,145,231,,,,105,,,
+2026-10-23,Friday,09:00,13:00,240,College Classes,Academic,1,4.0,145,231,,,,240,,,
+2026-10-23,Friday,13:00,13:40,40,Travel / Commute,Travel,1,4.0,145,231,,,,40,,,
+2026-10-23,Friday,13:40,14:25,45,Lunch,Routine,1,4.0,145,231,,,,45,,,
+2026-10-23,Friday,14:25,16:11,106,DSA Assignment,Academic,0,4.0,145,231,4,High,Medium,106,0,No,0
+2026-10-23,Friday,16:11,18:16,125,OS Study,Academic,0,4.0,145,231,5,Medium,Low,125,1,16:11,1
+2026-10-23,Friday,18:16,19:01,45,Break / Phone,Break,0,4.0,145,231,,,,45,,,
+2026-10-23,Friday,19:01,19:37,36,Reading,Personal,0,4.0,145,231,4,Low,High,36,1,19:01,1
+2026-10-23,Friday,19:37,21:19,102,YouTube Recording,Content,0,4.0,145,231,3,Low,High,102,1,19:37,1
+2026-10-23,Friday,21:19,22:48,89,Video Editing,Content,0,4.0,145,231,4,Low,Medium,89,1,21:19,1
+2026-10-23,Friday,22:48,23:30,42,Dinner / Relaxation / Personal Time,Routine,1,4.0,145,231,,,,42,,,
+2026-10-24,Saturday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,213,,,,45,,,
+2026-10-24,Saturday,07:15,13:00,345,Free / Break,Break,1,0.0,0,213,,,,345,,,
+2026-10-24,Saturday,13:00,13:45,45,Lunch,Routine,1,0.0,0,213,,,,45,,,
+2026-10-24,Saturday,13:45,15:19,94,Coding Practice,Skill,0,0.0,0,213,4,Low,High,94,1,13:45,1
+2026-10-24,Saturday,15:19,15:49,30,Reading,Personal,0,0.0,0,213,4,Medium,Medium,30,1,15:19,1
+2026-10-24,Saturday,15:49,16:34,45,Break / Phone,Break,0,0.0,0,213,,,,45,,,
+2026-10-24,Saturday,16:34,18:50,136,Project Work,Academic,0,0.0,0,213,4,Medium,Medium,136,1,16:34,1
+2026-10-24,Saturday,18:50,21:00,130,Video Editing,Content,0,0.0,0,213,5,High,High,130,0,No,0
+2026-10-24,Saturday,21:00,21:30,30,Break / Phone,Break,0,0.0,0,213,,,,30,,,
+2026-10-24,Saturday,21:30,22:47,77,DBMS Study,Academic,0,0.0,0,213,4,High,High,77,0,No,0
+2026-10-24,Saturday,22:47,23:30,43,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,213,,,,43,,,
+2026-10-25,Sunday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,0.0,0,0,,,,45,,,
+2026-10-25,Sunday,07:15,13:00,345,Free / Break,Break,1,0.0,0,0,,,,345,,,
+2026-10-25,Sunday,13:00,13:45,45,Lunch,Routine,1,0.0,0,0,,,,45,,,
+2026-10-25,Sunday,13:45,15:49,124,YouTube Recording,Content,0,0.0,0,0,5,Medium,Medium,124,1,13:45,1
+2026-10-25,Sunday,15:49,18:17,148,Gaming,Leisure,0,0.0,0,0,5,Low,Medium,148,1,15:49,1
+2026-10-25,Sunday,18:17,18:32,15,Break / Phone,Break,0,0.0,0,0,,,,15,,,
+2026-10-25,Sunday,18:32,20:20,108,Coding Practice,Skill,0,0.0,0,0,4,Medium,Medium,108,1,18:32,1
+2026-10-25,Sunday,20:20,23:30,190,Dinner / Relaxation / Personal Time,Routine,1,0.0,0,0,,,,190,,,
+2026-10-26,Monday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,2.0,95,185,,,,45,,,
+2026-10-26,Monday,07:15,08:00,45,Travel / Free Time,Travel,1,2.0,95,185,,,,45,,,
+2026-10-26,Monday,08:00,10:00,120,College Classes,Academic,1,2.0,95,185,,,,120,,,
+2026-10-26,Monday,10:00,10:50,50,Travel / Commute,Travel,1,2.0,95,185,,,,50,,,
+2026-10-26,Monday,10:50,13:30,160,Free / Break,Break,1,2.0,95,185,,,,160,,,
+2026-10-26,Monday,13:30,14:15,45,Lunch,Routine,1,2.0,95,185,,,,45,,,
+2026-10-26,Monday,14:15,16:11,116,Lab Preparation,Academic,0,2.0,95,185,4,Low,High,116,1,14:15,1
+2026-10-26,Monday,16:11,18:27,136,Gaming,Leisure,0,2.0,95,185,4,Low,High,136,1,16:11,1
+2026-10-26,Monday,18:27,19:12,45,Break / Phone,Break,0,2.0,95,185,,,,45,,,
+2026-10-26,Monday,19:12,20:21,69,DSA Assignment,Academic,0,2.0,95,185,5,Low,High,69,1,19:12,1
+2026-10-26,Monday,20:21,23:30,189,Dinner / Relaxation / Personal Time,Routine,1,2.0,95,185,,,,189,,,
+2026-10-27,Tuesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,155,472,,,,45,,,
+2026-10-27,Tuesday,07:15,09:00,105,Travel / Free Time,Travel,1,3.0,155,472,,,,105,,,
+2026-10-27,Tuesday,09:00,12:00,180,College Classes,Academic,1,3.0,155,472,,,,180,,,
+2026-10-27,Tuesday,12:00,12:50,50,Travel / Commute,Travel,1,3.0,155,472,,,,50,,,
+2026-10-27,Tuesday,12:50,13:00,10,Free / Break,Break,1,3.0,155,472,,,,10,,,
+2026-10-27,Tuesday,13:00,13:45,45,Lunch,Routine,1,3.0,155,472,,,,45,,,
+2026-10-27,Tuesday,13:45,15:01,76,Python Practice,Academic,0,3.0,155,472,4,Low,High,76,1,13:45,1
+2026-10-27,Tuesday,15:01,16:54,113,DBMS Study,Academic,0,3.0,155,472,4,High,Medium,113,0,No,0
+2026-10-27,Tuesday,16:54,17:24,30,Break / Phone,Break,0,3.0,155,472,,,,30,,,
+2026-10-27,Tuesday,17:24,19:03,99,Lab Preparation,Academic,0,3.0,155,472,5,Low,Medium,99,1,17:24,1
+2026-10-27,Tuesday,19:03,20:59,116,OS Study,Academic,0,3.0,155,472,4,Medium,Medium,116,1,19:03,1
+2026-10-27,Tuesday,20:59,21:14,15,Break / Phone,Break,0,3.0,155,472,,,,15,,,
+2026-10-27,Tuesday,21:14,22:22,68,Revision,Academic,0,3.0,155,472,3,Low,High,68,1,21:14,1
+2026-10-27,Tuesday,22:22,23:30,68,Dinner / Relaxation / Personal Time,Routine,1,3.0,155,472,,,,68,,,
+2026-10-28,Wednesday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,95,178,,,,45,,,
+2026-10-28,Wednesday,07:15,08:30,75,Travel / Free Time,Travel,1,5.0,95,178,,,,75,,,
+2026-10-28,Wednesday,08:30,13:30,300,College Classes,Academic,1,5.0,95,178,,,,300,,,
+2026-10-28,Wednesday,13:30,13:50,20,Travel / Commute,Travel,1,5.0,95,178,,,,20,,,
+2026-10-28,Wednesday,13:50,14:35,45,Lunch,Routine,1,5.0,95,178,,,,45,,,
+2026-10-28,Wednesday,14:35,16:06,91,YouTube Recording,Content,0,5.0,95,178,4,High,Medium,91,0,No,0
+2026-10-28,Wednesday,16:06,17:12,66,Revision,Academic,0,5.0,95,178,4,High,High,66,0,No,0
+2026-10-28,Wednesday,17:12,17:57,45,Break / Phone,Break,0,5.0,95,178,,,,45,,,
+2026-10-28,Wednesday,17:57,19:49,112,OS Study,Academic,0,5.0,95,178,3,Medium,Medium,112,1,17:57,1
+2026-10-28,Wednesday,19:49,22:02,133,Video Editing,Content,0,5.0,95,178,5,High,Low,133,0,No,0
+2026-10-28,Wednesday,22:02,23:30,88,Dinner / Relaxation / Personal Time,Routine,1,5.0,95,178,,,,88,,,
+2026-10-29,Thursday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,3.0,105,45,,,,45,,,
+2026-10-29,Thursday,07:15,08:30,75,Travel / Free Time,Travel,1,3.0,105,45,,,,75,,,
+2026-10-29,Thursday,08:30,11:30,180,College Classes,Academic,1,3.0,105,45,,,,180,,,
+2026-10-29,Thursday,11:30,12:00,30,Travel / Commute,Travel,1,3.0,105,45,,,,30,,,
+2026-10-29,Thursday,12:00,13:00,60,Free / Break,Break,1,3.0,105,45,,,,60,,,
+2026-10-29,Thursday,13:00,13:45,45,Lunch,Routine,1,3.0,105,45,,,,45,,,
+2026-10-29,Thursday,13:45,14:55,70,Exercise,Personal,0,3.0,105,45,5,Medium,Medium,70,1,13:45,0
+2026-10-29,Thursday,14:55,16:53,118,YouTube Recording,Content,0,3.0,105,45,4,Medium,Low,118,1,14:55,1
+2026-10-29,Thursday,16:53,17:23,30,Break / Phone,Break,0,3.0,105,45,,,,30,,,
+2026-10-29,Thursday,17:23,18:08,45,Revision,Academic,0,3.0,105,45,5,Medium,Medium,45,1,17:23,0
+2026-10-29,Thursday,18:08,19:54,106,Coding Practice,Skill,0,3.0,105,45,5,Low,Medium,106,1,18:08,1
+2026-10-29,Thursday,19:54,23:30,216,Dinner / Relaxation / Personal Time,Routine,1,3.0,105,45,,,,216,,,
+2026-10-30,Friday,06:30,07:15,45,Morning Routine + Breakfast,Routine,1,5.0,95,106,,,,45,,,
+2026-10-30,Friday,07:15,08:00,45,Travel / Free Time,Travel,1,5.0,95,106,,,,45,,,
+2026-10-30,Friday,08:00,13:00,300,College Classes,Academic,1,5.0,95,106,,,,300,,,
+2026-10-30,Friday,13:00,13:50,50,Travel / Commute,Travel,1,5.0,95,106,,,,50,,,
+2026-10-30,Friday,13:50,14:35,45,Lunch,Routine,1,5.0,95,106,,,,45,,,
+2026-10-30,Friday,14:35,16:47,132,Video Editing,Content,0,5.0,95,106,5,Low,Low,132,1,14:35,1
+2026-10-30,Friday,16:47,18:33,106,Lab Preparation,Academic,0,5.0,95,106,4,Low,Medium,106,1,16:47,1
+2026-10-30,Friday,18:33,18:48,15,Break / Phone,Break,0,5.0,95,106,,,,15,,,
+2026-10-30,Friday,18:48,20:27,99,Gaming,Leisure,0,5.0,95,106,3,Medium,High,99,1,18:48,1
+2026-10-30,Friday,20:27,21:09,42,Reading,Personal,0,5.0,95,106,4,Medium,Medium,42,1,20:27,1
+2026-10-30,Friday,21:09,23:30,141,Dinner / Relaxation / Personal Time,Routine,1,5.0,95,106,,,,141,,,

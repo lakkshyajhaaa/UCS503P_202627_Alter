@@ -41,13 +41,69 @@
   </aside>
 
     <main class="app-content">
-      <h1 class="app-page-title">Episodic</h1>
-      <p class="app-page-sub">Internal application routing.</p>
+      <h1 class="app-page-title">Episodic Memory</h1>
+      <p class="app-page-sub">A chronological log of your ingested events and activities.</p>
       
       <div class="app-panel">
-        <p style="color:#aaa;">Content for Episodic will be rendered here.</p>
+        <div class="app-card-title">Event Timeline (From 60-Day Dataset)</div>
+        <div class="feed-list" id="episodic-feed">
+          <p style="color:#aaa;">Loading dataset...</p>
+        </div>
       </div>
     </main>
   </div>
+
+  <script>
+    // Simple CSV parser and visualizer to show the data working statically on Vercel
+    async function loadEpisodicData() {
+      try {
+        const response = await fetch('../../../data/continuous_60_day_ai_schedule_dataset.csv');
+        if (!response.ok) throw new Error("Could not load dataset");
+        const text = await response.text();
+        
+        const lines = text.split('\\n').filter(l => l.trim().length > 0);
+        // header: date,day_of_week,time_start,time_end,duration_min,activity,category,is_fixed_schedule,class_hours,travel_minutes_today,academic_workload_before_slot_min,energy_level_1_5,distraction_level,priority,continuous_free_time_min,can_complete_task,best_time_for_task,task_completed
+        
+        const feed = document.getElementById('episodic-feed');
+        feed.innerHTML = '';
+        
+        // Take latest 50 events (or from bottom)
+        const recentEvents = lines.slice(1, 51);
+        
+        recentEvents.forEach(line => {
+          const cols = line.split(',');
+          if (cols.length < 6) return;
+          
+          const date = cols[0];
+          const timeStart = cols[2];
+          const timeEnd = cols[3];
+          const activity = cols[5];
+          const category = cols[6];
+          
+          const icon = category.toLowerCase().includes('academic') ? 'fa-book' : 
+                       category.toLowerCase().includes('leisure') ? 'fa-gamepad' : 
+                       category.toLowerCase().includes('routine') ? 'fa-clock' : 'fa-location-dot';
+
+          const html = `
+            <div class="feed-item">
+              <div class="feed-icon"><i class="fa-solid ${icon}"></i></div>
+              <div class="feed-content">
+                <p>Completed <strong>${activity}</strong></p>
+                <div class="feed-meta">${date} &bull; ${timeStart} - ${timeEnd} &bull; ${category}</div>
+              </div>
+            </div>
+          `;
+          feed.innerHTML += html;
+        });
+        
+      } catch (e) {
+        document.getElementById('episodic-feed').innerHTML = `<p style="color:#ff6b6b;">Error loading demo data: ${e.message}</p>`;
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', loadEpisodicData);
+  </script>
+  <!-- Add FontAwesome for icons if not already present in styles.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
 </body>
 </html>
