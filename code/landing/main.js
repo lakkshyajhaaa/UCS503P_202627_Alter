@@ -201,15 +201,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const simulationResult = document.getElementById("simulation-result");
   
   if (simulateBtn && simulationResult) {
-    simulateBtn.addEventListener("click", () => {
+    simulateBtn.addEventListener("click", async () => {
       simulateBtn.innerHTML = "SIMULATING... <span class='fa-solid fa-circle-notch fa-spin'></span>";
       simulateBtn.style.opacity = "0.7";
       simulateBtn.disabled = true;
       
-      setTimeout(() => {
-        simulateBtn.classList.add("hidden");
-        simulationResult.classList.remove("hidden");
-      }, 1000);
+      try {
+        const res = await fetch("/api/simulate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ scenario: "I have two free hours tonight. Would I work on my project or meet my friends?" })
+        });
+        if (res.ok) {
+          const data = await res.json();
+          const choiceEl = simulationResult.querySelector(".term-choice");
+          const confEl = simulationResult.querySelector(".term-confidence");
+          if (choiceEl && data.prediction) choiceEl.textContent = data.prediction;
+          if (confEl && data.confidence) confEl.textContent = `${data.confidence}% CONFIDENCE`;
+        }
+      } catch (e) {
+        // Graceful fallback to default markup
+      }
+      
+      simulateBtn.classList.add("hidden");
+      simulationResult.classList.remove("hidden");
     });
   }
 

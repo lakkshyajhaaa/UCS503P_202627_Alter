@@ -50,8 +50,10 @@
 
       <div class="app-panel" style="margin-bottom: 32px;">
         <div class="app-card-title">Simulate Scenario</div>
-        <input type="text" class="app-input" id="sim-input-quick" placeholder="e.g. Should I accept the dinner invitation for Thursday night?">
-        <button class="app-btn" onclick="const val = document.getElementById('sim-input-quick').value; window.location.href='../decisions/simulate-decision/index.html' + (val ? '?q=' + encodeURIComponent(val) : '')">Ask Alter</button>
+        <div style="display:flex; gap:12px; align-items:center;">
+          <input type="text" class="app-input" id="sim-input-quick" placeholder="e.g. Should I accept the dinner invitation for Thursday night?" onkeydown="if(event.key==='Enter') document.getElementById('quick-sim-btn').click();" style="flex:1;">
+          <button id="quick-sim-btn" class="app-btn" style="white-space:nowrap;" onclick="const val = (document.getElementById('sim-input-quick').value || '').trim(); window.location.href='../decisions/simulate-decision/index.html?q=' + encodeURIComponent(val || 'Should I accept the dinner invitation for Thursday night?');">Ask Alter</button>
+        </div>
       </div>
 
       <div class="app-grid">

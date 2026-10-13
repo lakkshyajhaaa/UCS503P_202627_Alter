@@ -5,6 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simulate Decision — Alter App</title>
   <link rel="stylesheet" href="../../../styles.css">
+  <style>
+    .prompt-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .prompt-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #bbb;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .prompt-chip:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border-color: var(--accent);
+    }
+  </style>
 </head>
 <body>
   <div class="bg">
@@ -21,7 +44,7 @@
       <div class="sidebar-nav-group">
         <div class="sidebar-nav-title">Engine</div>
         <a href="../../../app/overview/index.html" class="sidebar-link">Overview</a>
-        <a href="../../../app/decisions/simulate-decision/index.html" class="sidebar-link">Simulate Decision</a>
+        <a href="../../../app/decisions/simulate-decision/index.html" class="sidebar-link active">Simulate Decision</a>
         <a href="../../../app/ask-twin/index.html" class="sidebar-link">Ask Alter</a>
       </div>
       <div class="sidebar-nav-group">
@@ -44,18 +67,28 @@
       
       <div class="app-panel" style="margin-bottom: 24px;">
         <div class="app-card-title">Scenario</div>
-        <textarea id="sim-input" class="app-input" placeholder="Describe the decision or scenario in detail... e.g., I've been offered a promotion that requires 20% more travel, but comes with a 30% raise. Should I take it?"></textarea>
-        <button id="sim-btn" class="app-btn">Simulate Scenario</button>
+        <textarea id="sim-input" class="app-input" rows="3" placeholder="Describe the decision or scenario in detail... e.g., I've been offered a promotion that requires 20% more travel, but comes with a 30% raise. Should I take it?"></textarea>
+        
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px;">
+          <button id="sim-btn" class="app-btn">Simulate Scenario</button>
+          
+          <div class="prompt-chips">
+            <span class="prompt-chip" onclick="setPrompt('Should I accept the dinner invitation for Thursday night?')">Thursday Dinner</span>
+            <span class="prompt-chip" onclick="setPrompt('Should I spend Saturday afternoon studying DBMS and OS?')">Weekend Study</span>
+            <span class="prompt-chip" onclick="setPrompt('I have been offered a promotion that requires 20% more travel, but comes with a 30% raise. Should I take it?')">Promotion & Travel</span>
+            <span class="prompt-chip" onclick="setPrompt('Should I take on an extra high workload freelance project?')">Freelance Workload</span>
+          </div>
+        </div>
       </div>
 
-      <div id="sim-results" class="app-grid hidden" style="display: none;">
+      <div id="sim-results" class="app-grid" style="display: none;">
         <div class="app-panel" style="grid-column: 1 / -1; border-color: var(--accent);">
           <div class="app-card-title" style="color: var(--accent);">Alter Predicts</div>
-          <div class="metric-value" id="sim-prediction">Analyzing scenario...</div>
-          <div class="metric-label" id="sim-confidence">Dynamic confidence score will appear here</div>
+          <div class="metric-value" id="sim-prediction" style="font-size:20px; line-height:1.4;">Analyzing scenario...</div>
+          <div class="metric-label" id="sim-confidence" style="margin-top:8px;">Dynamic confidence score will appear here</div>
           
           <div style="margin-top: 32px;">
-            <div class="app-card-title">Reasoning Breakdown</div>
+            <div class="app-card-title">Supporting Historical Evidence</div>
             <div class="feed-list" id="sim-reasoning">
             </div>
           </div>
@@ -64,18 +97,46 @@
     </main>
   </div>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+
   <script>
+    function setPrompt(text) {
+      document.getElementById('sim-input').value = text;
+      document.getElementById('sim-btn').click();
+    }
+
+    // Auto-run if query param passed from other pages
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q') || params.get('scenario');
+      if (q) {
+        document.getElementById('sim-input').value = decodeURIComponent(q);
+        setTimeout(() => {
+          document.getElementById('sim-btn').click();
+        }, 150);
+      }
+    });
+
     document.getElementById('sim-btn').addEventListener('click', async function() {
       const btn = this;
-      const input = document.getElementById('sim-input').value;
-      if (!input) return;
+      let input = (document.getElementById('sim-input').value || '').trim();
+      
+      // If user clicks button without typing, default to the placeholder prompt
+      if (!input) {
+        input = "Should I accept the dinner invitation for Thursday night?";
+        document.getElementById('sim-input').value = input;
+      }
 
       btn.innerText = 'Simulating via Twin Engine...';
       btn.style.opacity = '0.7';
       btn.disabled = true;
       
       const resultsDiv = document.getElementById('sim-results');
-      resultsDiv.style.display = 'none';
+      resultsDiv.classList.remove('hidden');
+      resultsDiv.style.display = 'grid';
+      document.getElementById('sim-prediction').innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Simulating scenario against twin memory...';
+      document.getElementById('sim-confidence').innerText = 'Calculating similarity vectors across episodic and semantic memory...';
+      document.getElementById('sim-reasoning').innerHTML = '<p style="color:#888;">Retrieving relevant historical decisions...</p>';
 
       try {
         const res = await fetch('/api/simulate', {
@@ -84,33 +145,37 @@
           body: JSON.stringify({ scenario: input })
         });
         
-        if(!res.ok) throw new Error("Twin Engine API failed");
+        if (!res.ok) throw new Error("Twin Engine API returned status " + res.status);
         const data = await res.json();
         
         document.getElementById('sim-prediction').innerText = data.prediction;
-        document.getElementById('sim-confidence').innerHTML = \`Confidence: \${data.confidence}% &bull; Generated by Python Backend\`;
+        document.getElementById('sim-confidence').innerHTML = `<strong style="color:#10b981;">Confidence: ${data.confidence}%</strong> &bull; Generated dynamically by Twin Engine`;
         
         const reasoningList = document.getElementById('sim-reasoning');
         reasoningList.innerHTML = '';
         
-        data.reasoning.forEach(r => {
-          const badgeType = r.is_inferred ? 'badge-inferred' : 'badge-known';
-          const badgeText = r.is_inferred ? 'Inferred' : 'Known';
-          reasoningList.innerHTML += \`
-            <div class="feed-item">
-              <div class="feed-icon"><span class="badge \${badgeType}">\${badgeText}</span></div>
-              <div class="feed-content">
-                <p>\${r.content}</p>
-                <div class="feed-meta">\${r.type.toUpperCase()} Memory Match</div>
+        if (data.reasoning && data.reasoning.length > 0) {
+          data.reasoning.forEach(r => {
+            const badgeType = r.is_inferred ? 'badge-inferred' : 'badge-known';
+            const badgeText = r.is_inferred ? 'Inferred' : 'Known';
+            reasoningList.innerHTML += `
+              <div class="feed-item">
+                <div class="feed-icon"><span class="badge ${badgeType}">${badgeText}</span></div>
+                <div class="feed-content">
+                  <p>${r.content}</p>
+                  <div class="feed-meta">${r.type.toUpperCase()} Memory Match</div>
+                </div>
               </div>
-            </div>
-          \`;
-        });
-        
-        resultsDiv.style.display = 'grid';
+            `;
+          });
+        } else {
+          reasoningList.innerHTML = '<p style="color:#aaa;">No conflicting historical memories detected.</p>';
+        }
         
       } catch(e) {
-        alert("Failed to reach Twin Engine: " + e.message);
+        document.getElementById('sim-prediction').innerText = "Simulation Notice";
+        document.getElementById('sim-confidence').innerHTML = `<span style="color:#f87171;">Twin Engine response: ${e.message}</span>`;
+        document.getElementById('sim-reasoning').innerHTML = `<p style="color:#aaa;">Unable to reach serverless Python API. Verify backend deployment.</p>`;
       } finally {
         btn.innerText = 'Simulate Scenario';
         btn.style.opacity = '1';

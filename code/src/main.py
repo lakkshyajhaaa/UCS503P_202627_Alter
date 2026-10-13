@@ -141,12 +141,9 @@ def simulate_decision(request: SimulationRequest, db: Session = Depends(get_db))
     scored_memories = []
     if all_memories:
         try:
-            import numpy as np
-            from scipy.spatial.distance import cosine
             for m in all_memories:
                 m_vec = encode_text(m.content)
-                dist = cosine(scenario_vector, m_vec)
-                sim = 1.0 - dist if not math.isnan(dist) else 0.0
+                sim = max(0.0, min(1.0, sum(a * b for a, b in zip(scenario_vector, m_vec))))
                 scored_memories.append((sim, m))
             scored_memories.sort(key=lambda x: x[0], reverse=True)
         except Exception:
