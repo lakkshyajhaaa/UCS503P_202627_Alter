@@ -24,6 +24,3 @@ dependencies = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["code/src"]
-
-[tool.vercel]
-entrypoint = "code/src/main.py:app"

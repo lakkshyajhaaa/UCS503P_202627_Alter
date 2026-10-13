@@ -24,13 +24,5 @@
       "src": "/(.*)",
       "dest": "code/landing/$1"
     }
-  ],
-  "functions": {
-    "code/src/main.py": {
-      "includeFiles": "code/src/**"
-    },
-    "api/index.py": {
-      "includeFiles": "code/src/**"
-    }
-  }
+  ]
 }
