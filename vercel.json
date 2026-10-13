@@ -3,7 +3,12 @@
   "builds": [
     {
       "src": "code/src/main.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "code/src/**"
+        ]
+      }
     },
     {
       "src": "code/landing/**",
@@ -22,7 +27,10 @@
   ],
   "functions": {
     "code/src/main.py": {
-      "includeFiles": "code/src/alter_db.sqlite"
+      "includeFiles": "code/src/**"
+    },
+    "api/index.py": {
+      "includeFiles": "code/src/**"
     }
   }
 }

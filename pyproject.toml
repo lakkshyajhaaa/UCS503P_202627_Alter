@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
@@ -24,3 +24,6 @@ dependencies = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["code/src"]
+
+[tool.vercel]
+entrypoint = "code/src/main.py:app"

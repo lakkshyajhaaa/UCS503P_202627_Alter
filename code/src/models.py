@@ -1,8 +1,15 @@
 import uuid
 from datetime import datetime
 from sqlalchemy import Column, String, Float, Integer, DateTime, Boolean, JSON, Enum
-from src.database import Base
 import enum
+
+try:
+    from database import Base
+except (ImportError, ModuleNotFoundError):
+    try:
+        from src.database import Base
+    except (ImportError, ModuleNotFoundError):
+        from code.src.database import Base
 
 class MemoryType(enum.Enum):
     EPISODIC = "episodic"
