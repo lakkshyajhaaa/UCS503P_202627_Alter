@@ -51,7 +51,7 @@
       <div class="app-panel" style="margin-bottom: 32px;">
         <div class="app-card-title">Simulate Scenario</div>
         <input type="text" class="app-input" id="sim-input-quick" placeholder="e.g. Should I accept the dinner invitation for Thursday night?">
-        <button class="app-btn" onclick="window.location.href='../decisions/simulate-decision/index.html'">Ask Alter</button>
+        <button class="app-btn" onclick="const val = document.getElementById('sim-input-quick').value; window.location.href='../decisions/simulate-decision/index.html' + (val ? '?q=' + encodeURIComponent(val) : '')">Ask Alter</button>
       </div>
 
       <div class="app-grid">
